@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archana's Portfolio</title>
+    <link rel="stylesheet" href="my protfolio.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="#home" class="logo">Archana's <span>Portfolio</span></a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+            <a href="#Coursera">Coursera</a>
+        </nav>
+        <div id="darkmode-toggle" class="btn">
+            <div class="btn__indicator">
+              <div class="btn__icon-container">
+                <i class="btn__icon fa-solid"></i>
+              </div>
+            </div>
+          </div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Hi, I am <span>Archana</span></h1>
+            <h3 class="text-animation">I'm a <span></span></h3>
+            <p>Hello! I'm a passionate Computer Science Engineering student with a deep love for coding and technology.
+                I have hands-on experience with languages such as  HTML, CSS, 
+                JavaScript, and My goal is to become a proficient Web Developer. I am also an
+                enthusiast in Artificial Intelligence and Machine Learning, constantly exploring and learning about the
+                latest advancements in the field. I am driven by curiosity and a desire to create impactful solutions
+                through code.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/archana-prajapati-805433311/" target="_blank"><i
+                        class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/archanaprajapat" target="_blank"><i class='bx bxl-github'></i></a>
+
+                <a href="https://x.com/ArchanaPra54130" target="_blank"><i class='bx bxl-twitter'></i></a>
+            </div>
+            <div class="btn-group">
+                <a href="https://drive.google.com/file/d/1huw6bYMttLRLbXp6d1GndlO2_BQGgCOk/view?usp=sharing" download  class="btn">Download Resume</a>
+                <a href="#contact" class="btn">Contact</a>
+            </div>
+        </div>
+        <div class="home-img">
+            <img src="archu.jpg" alt="Personal Picture">
+        </div>
+    </section>
+
+    <section class="education" id="education">
+        <h2 class="heading">Education</h2>
+        <div class="timeline-items">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2020</div>
+                <div class="timeline-content">
+                    <h3>Intermediate</h3>
+                    <p>Class 12th   Hindu Inter College, Atarra, Banda (UP Board) || Year
+                        of Completion: 2020 </p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2024</div>
+                <div class="timeline-content">
+                    <h3>University</h3>
+                    <p>Bachelor of  Science ||Swami Vivekanand Mahavidyalaya, Bundelkhand University, Jashi, Banda (UP) ||Year of Completion: 2023</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2024</div>
+                <div class="timeline-content">
+                    <h3>Course</h3>
+                    <p>Web Development Course  Duration: 18 month  During this Course, Web Development Course   Duration: 15 month  During this Course, I learned javascript,HTML,CSS,  problem-solving skills, and depend my understanding of the language.
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+        <form action="https://formspree.io/f/xqazzoao"
+        method="POST" id="contact-form">
+            <div class="input-group">
+                <div class="input-box">
+                    <input type="text" placeholder="Full Name" id="name" name="name" autocomplete="off" required/>
+                    
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Email" id="email" autocomplete="off" required name="email"/>
+                    
+                </div>
+                <div class="input-box">
+                    <input type="number" placeholder="Phone Number" id="phone" name="phone"  autocomplete="off" required/>
+                    
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Subject" id="subject" autocomplete="off" name="subject" required/>
+                    
+                </div>
+            </div>
+            <div class="input-group-2">
+                <textarea id="message" cols="30" rows="10" placeholder="Your Message" name="textarea"
+                    autocomplete="off" required></textarea>
+                
+                <input type="submit" value="Send Message" class="btn">
+            </div>
+        </form>
+    </section>
+    
+ <footer class="footer">
+        <div class="social">
+            <a href="https://www.linkedin.com/in/archana-prajapati-805433311/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/archanaprajapat" target="_blank"><i class='bx bxl-github'></i></a>
+            <a href="https://x.com/ArchanaPra54130" target=" _blank"><i class="bx bx1-coursera"></i></a>
+        </div>
+        <ul class="list">
+            <li><a href="#home">FAQ</a></li>
+            <li><a href="#home">About Me</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <p class="copyright">
+            <i class='bx bx-copyright'></i> | Created By Archana | 2024
+        </p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="my protfolio.js"></script>
+</body>
+
+</html>
