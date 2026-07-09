@@ -1,7 +1,6 @@
 // Toggle navbar visibility on small screens
 const menuIcon = document.querySelector("#menu-icon");
 const navbar = document.querySelector(".navbar");
-
 menuIcon.onclick = () => {
   menuIcon.classList.toggle("bx-x");
   navbar.classList.toggle("active");
@@ -10,15 +9,12 @@ menuIcon.onclick = () => {
 // Highlight active section in the navbar
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("header nav a");
-
 window.onscroll = () => {
   const top = window.scrollY;
-
   sections.forEach((sec) => {
     const offset = sec.offsetTop - 150;
     const height = sec.offsetHeight;
     const id = sec.getAttribute("id");
-
     if (top >= offset && top < offset + height) {
       navLinks.forEach((link) => {
         link.classList.remove("active");
@@ -35,7 +31,6 @@ window.onscroll = () => {
 const darkModeToggle = document.querySelector("#darkmode-toggle");
 const body = document.querySelector("body");
 const icon = document.querySelector(".btn__icon");
-
 let isDarkMode = localStorage.getItem("darkmode") === "true"; // Load dark mode state from local storage
 
 const toggleDarkMode = () => {
@@ -85,3 +80,43 @@ function updateIcon() {
 
 // Initialize dark mode on page load
 toggleDarkMode();
+
+// Simple success/error handling for the contact form (Formspree)
+const contactForm = document.querySelector("#contact-form");
+if (contactForm) {
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = new FormData(contactForm);
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+      if (response.ok) {
+        if (window.Swal) {
+          Swal.fire({
+            icon: "success",
+            title: "Message sent!",
+            text: "Thanks for reaching out, I'll get back to you soon.",
+          });
+        } else {
+          alert("Message sent! Thanks for reaching out.");
+        }
+        contactForm.reset();
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (err) {
+      if (window.Swal) {
+        Swal.fire({
+          icon: "error",
+          title: "Something went wrong",
+          text: "Please try again in a moment.",
+        });
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    }
+  });
+}
