@@ -1,393 +1,140 @@
-/* ROOT VARIABLES (Default Settings - Will change via JS) */
-:root {
-    --bg-color: #080808;
-    --second-bg-color: #131313;
-    --text-color: white;
-    --main-color: #00ffee;
+// 1. Mobile Screen par Navbar Toggle (Open/Close) karna
+const menuIcon = document.querySelector("#menu-icon");
+const navbar = document.querySelector(".navbar");
+
+if (menuIcon && navbar) {
+    menuIcon.onclick = () => {
+        menuIcon.classList.toggle("bx-x");       // Menu icon ko 'X' me badalna
+        navbar.classList.toggle("active");       // Navbar ko show/hide karna
+    };
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    scroll-behavior: smooth;
-    font-family: 'Poppins', sans-serif;
-}
+// 2. Scroll karne par sahi Section ke Link ko active (highlight) karna
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("header nav a");
 
-body {
-    background: var(--bg-color);
-    color: var(--text-color);
-    transition: 0.4s ease;
-}
+window.onscroll = () => {
+    const top = window.scrollY;
 
-section {
-    min-height: 100vh;
-    padding: 10rem 9% 2rem;
-}
+    sections.forEach((sec) => {
+        const offset = sec.offsetTop - 150;
+        const height = sec.offsetHeight;
+        const id = sec.getAttribute("id");
 
-/* HEADER & NAVBAR ALIGNMENT */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 2rem 9%;
-    background: var(--bg-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: 0.4s ease;
-}
+        if (top >= offset && top < offset + height) {
+            navLinks.forEach((link) => {
+                link.classList.remove("active");
+                // Aapke purane selector ke bug ko yahan theek kiya gaya hai
+                const activeLink = document.querySelector(`header nav a[href*=${id}]`);
+                if (activeLink) {
+                    activeLink.classList.add("active");
+                }
+            });
+        }
+    });
 
-.logo {
-    font-size: 2.5rem;
-    color: var(--text-color);
-    font-weight: 700;
-}
-
-.logo span {
-    color: var(--main-color);
-}
-
-.navbar a {
-    font-size: 1.7rem;
-    color: var(--text-color);
-    margin-left: 4rem;
-    transition: .3s;
-}
-
-.navbar a:hover,
-.navbar a.active {
-    color: var(--main-color);
-}
-
-.header-actions {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-.btn-toggle {
-    background: transparent;
-    cursor: pointer;
-    font-size: 2.2rem;
-    color: var(--main-color);
-}
-
-#menu-icon {
-    font-size: 3.6rem;
-    color: var(--text-color);
-    cursor: pointer;
-    display: none;
-}
-
-/* HERO / HOME SECTION (Photo 1 - Modern Square) */
-.home {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 4rem;
-}
-
-.home-content h3 {
-    font-size: 3.2rem;
-    font-weight: 700;
-}
-
-.home-content h1 {
-    font-size: 5.6rem;
-    font-weight: 700;
-    line-height: 1.3;
-}
-
-.home-content p {
-    font-size: 1.6rem;
-    margin: 2rem 0;
-}
-
-/* MODERN SQUARE PHOTO WITH SOFT CORNERS (No Circle) */
-.home-img img, .about-img img {
-    width: 35vw;
-    border-radius: 2rem; /* Soft smooth corners */
-    border: 4px solid var(--main-color);
-    box-shadow: 0 0 25px var(--main-color);
-    object-fit: cover;
-    transition: 0.4s ease;
-}
-
-.home-img img:hover, .about-img img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 40px var(--main-color);
-}
-
-/* GENERAL BUTTONS */
-.btn {
-    display: inline-block;
-    padding: 1rem 2.8rem;
-    background: var(--main-color);
-    border-radius: 4rem;
-    box-shadow: 0 0 1rem var(--main-color);
-    font-size: 1.6rem;
-    color: var(--bg-color);
-    letter-spacing: .1rem;
-    font-weight: 600;
-    transition: .5s ease;
-    cursor: pointer;
-}
-
-.btn:hover {
-    box-shadow: none;
-}
-
-.btn-center {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 2rem;
-}
-
-.social-media a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 4rem;
-    height: 4rem;
-    background: transparent;
-    border: .2rem solid var(--main-color);
-    border-radius: 50%;
-    font-size: 2rem;
-    color: var(--main-color);
-    margin: 3rem 1.5rem 3rem 0;
-    transition: .5s ease;
-}
-
-.social-media a:hover {
-    background: var(--main-color);
-    color: var(--bg-color);
-    box-shadow: 0 0 1rem var(--main-color);
-}
-
-/* ABOUT SECTION (Photo 2 - Left Aligned) */
-.about {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 6rem;
-    background: var(--second-bg-color);
-}
-
-.heading {
-    text-align: center;
-    font-size: 4.5rem;
-    margin-bottom: 5rem;
-}
-
-.heading span {
-    color: var(--main-color);
-}
-
-.about-content h2 {
-    text-align: left;
-    line-height: 1.2;
-}
-
-.about-content h3 {
-    font-size: 2.6rem;
-}
-
-.about-content p {
-    font-size: 1.6rem;
-    margin: 2rem 0 3rem;
-}
-
-/* SKILLS SECTION ALIGNMENT */
-.skills {
-    background: var(--bg-color);
-}
-
-.skills-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 4rem;
-    flex-wrap: wrap;
-}
-
-.skills-box {
-    flex: 1 1 40rem;
-    background: var(--second-bg-color);
-    padding: 3rem;
-    border-radius: 2rem;
-    border: 2px solid rgba(255, 255, 255, 0.05);
-    transition: 0.3s;
-}
-
-.skills-box:hover {
-    border-color: var(--main-color);
-}
-
-.skills-box h3 {
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
-    color: var(--main-color);
-}
-
-.skills-list {
-    list-style: none;
-}
-
-.skills-list li {
-    font-size: 1.6rem;
-    margin-bottom: 1.2rem;
-    position: relative;
-    padding-left: 2.5rem;
-}
-
-.skills-list li::before {
-    content: "✔";
-    position: absolute;
-    left: 0;
-    color: var(--main-color);
-    font-weight: bold;
-}
-
-/* PROJECTS SECTION (Buttons strictly centered) */
-.projects {
-    background: var(--second-bg-color);
-}
-
-.projects-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2.5rem;
-    flex-wrap: wrap;
-}
-
-.project-card {
-    flex: 1 1 35rem;
-    background: var(--bg-color);
-    padding: 3rem;
-    border-radius: 2rem;
-    border: 2px solid transparent;
-    transition: 0.4s;
-}
-
-.project-card:hover {
-    border-color: var(--main-color);
-    transform: translateY(-5px);
-}
-
-.project-info h4 {
-    font-size: 2.2rem;
-    color: var(--text-color);
-}
-
-.project-info p {
-    font-size: 1.5rem;
-    margin: 1.5rem 0;
-    line-height: 1.6;
-}
-
-/* CERTIFICATES SECTION ALIGNMENT */
-.certificates {
-    background: var(--bg-color);
-}
-
-.certificates-container {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    flex-wrap: wrap;
-}
-
-.certificate-card {
-    flex: 1 1 30rem;
-    background: var(--second-bg-color);
-    padding: 3rem;
-    border-radius: 2rem;
-    text-align: center;
-    border-bottom: 4px solid var(--main-color);
-}
-
-.certificate-card i {
-    font-size: 4rem;
-    color: var(--main-color);
-    margin-bottom: 1.5rem;
-}
-
-.certificate-card h4 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-/* CONTACT SECTION FORM */
-.contact {
-    background: var(--second-bg-color);
-}
-
-.contact form {
-    max-width: 70rem;
-    margin: 1rem auto;
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.contact form .input-box {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.contact form .input-box input,
-.contact form textarea {
-    width: 100%;
-    padding: 1.5rem;
-    font-size: 1.6rem;
-    color: var(--text-color);
-    background: var(--bg-color);
-    border-radius: .8rem;
-    margin: .7rem 0;
-}
-
-.contact form .input-box input {
-    width: 49%;
-}
-
-.contact form textarea {
-    resize: none;
-}
-
-/* RESPONSIVE DESIGN (FOR SMALL SCREENS) */
-@media (max-width: 991px) {
-    header { padding: 2rem 3%; }
-    section { padding: 10rem 3% 2rem; }
-    .home { flex-direction: column-reverse; text-align: center; }
-    .home-img img, .about-img img { width: 60vw; margin-top: 4rem; }
-    .about { flex-direction: column; text-align: center; }
-    .about-content h2 { text-align: center; }
-    .contact form .input-box input { width: 100%; }
-}
-
-@media (max-width: 768px) {
-    #menu-icon { display: block; }
-    .navbar {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        padding: 1rem 3%;
-        background: var(--bg-color);
-        border-top: .1rem solid rgba(0,0,0,.2);
-        box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
-        display: none;
+    // Jab mobile me scroll karein, toh menu apne aap band ho jaye
+    if (menuIcon && navbar) {
+        menuIcon.classList.remove("bx-x");
+        navbar.classList.remove("active");
     }
-    .navbar.active { display: block; }
-    .navbar a { display: block; font-size: 2rem; margin: 3rem 0; }
+};
+
+// 3. Dark Mode Toggle Functionality (With CSS Variables & Local Storage)
+const darkModeToggle = document.querySelector("#darkmode-toggle");
+const body = document.querySelector("body");
+const icon = document.querySelector(".btn__icon");
+
+// Pehle se saved state check karna
+let isDarkMode = localStorage.getItem("darkmode") === "true"; 
+
+const toggleDarkMode = () => {
+    // Dark mode aur Light mode ke colors set karna
+    document.documentElement.style.setProperty("--bg-color", isDarkMode ? "#080808" : "#f0f0f0");
+    document.documentElement.style.setProperty("--second-bg-color", isDarkMode ? "#131313" : "#e0e0e0");
+    document.documentElement.style.setProperty("--text-color", isDarkMode ? "white" : "#333333");
+    document.documentElement.style.setProperty("--main-color", isDarkMode ? "#00ffee" : "#fa8128");
+    
+    if (body) {
+        body.classList.toggle("darkmode", isDarkMode);
+    }
+    updateIcon();
+};
+
+// Click karne par mode switch hona
+if (darkModeToggle) {
+    darkModeToggle.addEventListener("click", () => {
+        isDarkMode = !isDarkMode;
+        localStorage.setItem("darkmode", isDarkMode); // Local storage me save karna
+        toggleDarkMode();
+    });
+}
+
+// Moon aur Sun icon badalne ka function (with animation)
+function updateIcon() {
+    if (!icon) return;
+    icon.classList.add("animated");
+    
+    if (isDarkMode) {
+        icon.classList.add("fa-sun");
+        icon.classList.remove("fa-moon");
+    } else {
+        icon.classList.add("fa-moon");
+        icon.classList.remove("fa-sun");
+    }
+    
+    setTimeout(() => {
+        icon.classList.remove("animated");
+    }, 500); 
+}
+
+// Page load hote hi check karega ki kaunsa mode pehle se active tha
+toggleDarkMode();
+
+// 4. Contact Form (Formspree) Validation & Success/Error Alerts
+const contactForm = document.querySelector("#contact-form");
+
+if (contactForm) {
+    contactForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const data = new FormData(contactForm);
+        
+        try {
+            const response = await fetch(contactForm.action, {
+                method: "POST",
+                body: data,
+                headers: { Accept: "application/json" },
+            });
+            
+            if (response.ok) {
+                // Agar SweetAlert (Swal) library loaded hai toh stylish alert, nahi toh normal alert
+                if (window.Swal) {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Message sent!",
+                        text: "Thanks for reaching out, I'll get back to you soon.",
+                        background: isDarkMode ? '#131313' : '#ffffff',
+                        color: isDarkMode ? '#ffffff' : '#333333'
+                    });
+                } else {
+                    alert("Message sent! Thanks for reaching out.");
+                }
+                contactForm.reset(); // Form clear karna
+            } else {
+                throw new Error("Form submission failed");
+            }
+        } catch (err) {
+            if (window.Swal) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Something went wrong",
+                    text: "Please try again in a moment.",
+                    background: isDarkMode ? '#131313' : '#ffffff',
+                    color: isDarkMode ? '#ffffff' : '#333333'
+                });
+            } else {
+                alert("Something went wrong. Please try again.");
+            }
+        }
+    });
 }
