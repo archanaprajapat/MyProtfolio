@@ -1,3 +1,43 @@
+
+Claude finished the response
+
+Prepared JavaScript code with minimal corrections intact
+Prepared JavaScript code with minimal corrections intact
+Now the HTML, rebuilt around the resume content while keeping the exact same design/classes.
+
+
+Created a file, ran a command, read a file
+Created a file, ran a command, read a file
+Maine tumhara original design/theme bilkul same rakha hai (wahi neon dark-mode toggle, timeline style, boxicons) — sirf content ab tumhare resume ke hisaab se update kiya hai:
+
+Kya add/update hua:
+
+Home: Naya bio (Program & Data Coordination profile) + email icon
+Experience (naya section): Youth Dreamers Foundation, NavGurukul Admissions Intern, Educate Girls Volunteer — timeline style
+Education: 4 entries — NavGurukul, B.Sc, XII, X
+Skills (naya): Data & Program Management, Coordination, Technical Skills, Certifications
+Portfolio (naya): Image Gallery site, Power BI dashboard, Tableau dashboard links
+Contact: Phone, email, Patna location + tumhara wahi Formspree form
+3 files hain: index.html, my protfolio.css, my protfolio.js — exact same naam jaise tumhare original me the, so bas apne repo me replace karke push kar dena, sab kaam karega.
+
+
+Index
+Code · HTML 
+
+My protfolio
+Code · CSS 
+
+My protfolio
+JS 
+code do mujhe
+
+
+Code inline display requested
+Code inline display requested
+Ye raho teeno files ka pura code — copy karke apni existing files me paste kar dena (same file names use karna: index.html, my protfolio.css, my protfolio.js):
+
+1. index.html
+html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -266,3 +306,1903 @@
 </body>
 
 </html>
+2. my protfolio.css
+css
+:root {
+  --bg-color: #080808;
+  --second-bg-color: #131313;
+  --text-color: white;
+  --main-color: #00ffee;
+  --dark-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+  }
+
+  html {
+    font-size: 60%;
+    overflow-x: hidden;
+  }
+
+  body {
+    background: var(--bg-color);
+    color: var(--text-color);
+  }
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 12% 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+  }
+
+  .logo {
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .logo:hover {
+    transform: scale(1.1);
+  }
+
+  .logo span {
+    text-shadow: 0 0 25px var(--main-color);
+  }
+
+  .navbar a {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 500;
+    transform: 0.3s ease;
+    border-bottom: 3px solid transparent;
+  }
+
+  .navbar a:hover,
+  .navbar a.active {
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+  }
+
+  #menu-icon {
+    font-size: 3.6rem;
+    color: var(--main-color);
+    display: none;
+    cursor: pointer;
+  }
+
+  section {
+    min-height: 100vh;
+    padding: 10rem 12% 10rem;
+  }
+
+  .home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15rem;
+  }
+
+  .home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    text-align: left;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+
+  span {
+    color: var(--main-color);
+  }
+
+  .logo span {
+    color: var(--main-color);
+  }
+
+  .home-content h3 {
+    margin-bottom: 1.2rem;
+    margin-top: 1.5rem;
+    font-size: 3.5rem;
+  }
+
+  .home-content h1 {
+    font-size: 7rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    line-height: 1;
+  }
+
+  .home-img {
+    border-radius: 50%;
+  }
+
+  .home-img img {
+    position: relative;
+    top: 3rem;
+    width: 32vw;
+    height: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+  }
+
+  .home-img img:hover {
+    box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color),
+      0 0 100px var(--main-color);
+  }
+
+  .home-content p {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.8;
+    max-width: 1000px;
+  }
+
+  .social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    font-size: 2.5rem;
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease-in-out;
+  }
+
+  .social-icons a:hover {
+    color: var(--text-color);
+    transform: scale(1.3) translateY(-5px);
+    box-shadow: 0 0 25px var(--main-color);
+    background-color: var(--main-color);
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: black;
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  #darkmode-toggle {
+    background-color: #ff00ff;
+    width: 5em;
+    height: 2.5em;
+    border-radius: 10em;
+    padding: 0 0.5em;
+    box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
+      inset 0 8px 8px rgba(0, 0, 0, 0.1), inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px var(--main-color);
+  }
+
+  .btn-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .btn-group a:nth-of-type(2) {
+    background-color: black;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    box-shadow: 0 0 25px transparent;
+  }
+
+  .btn-group a:nth-of-type(2):hover {
+    box-shadow: 0 0 25px var(--main-color);
+    background-color: var(--main-color);
+    color: black;
+  }
+
+  .btn__indicator {
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+  }
+
+  .btn__icon-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn__icon {
+    color: #2b2b2b;
+    font-size: 3rem;
+  }
+
+  .btn__icon.animated {
+    animation: spin 0.6s;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  body.darkmode {
+    background-color: var(--bg-color);
+  }
+
+  .darkmode #darkmode-toggle {
+    box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.3),
+      inset 8px 0 8px rgba(0, 0, 0, 0.3), inset 0 -4px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .darkmode .btn__indicator {
+    transform: translateX(2.2em);
+    background-color: var(--dark-color);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .darkmode .btn__icon {
+    color: #ffde59;
+    font-size: 3rem;
+  }
+  .text-animation {
+    font-size: 34px;
+    font-weight: 600;
+    min-height: 150px;
+  }
+
+  .text-animation span {
+    position: relative;
+  }
+
+  .text-animation span::before {
+    content: "Web Developer";
+    color: var(--main-color);
+    animation: words 25s infinite;
+  }
+
+  .text-animation span::after {
+    content: "";
+    background-color: var(--bg-color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--bg-color);
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 25s steps(22) infinite;
+  }
+
+  @keyframes cursor {
+    to {
+      border-left: 2px solid var(--main-color);
+    }
+  }
+
+  @keyframes words {
+    0%,
+    20% {
+      content: "Program Associate";
+    }
+
+    21%,
+    40% {
+      content: "Data Coordinator";
+    }
+
+    41%,
+    60% {
+      content: "MIS Specialist";
+    }
+
+    61%,
+    80% {
+      content: "Scholarship Facilitator";
+    }
+
+    81%,
+    100% {
+      content: "Web Developer";
+    }
+  }
+
+  @keyframes typing {
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95% {
+      width: 0;
+    }
+
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85% {
+      width: calc(100% + 8px);
+    }
+  }
+
+  .heading {
+    font-size: 8rem;
+    text-align: center;
+    margin: 5rem 0;
+  }
+
+  .education {
+    padding: 100px 15px;
+    background: var(--second-bg-color);
+  }
+
+  .education h2 {
+    margin-bottom: 5rem;
+  }
+
+  .experience {
+    background: var(--bg-color);
+  }
+
+  .experience h2 {
+    margin-bottom: 5rem;
+  }
+
+  .timeline-items {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .timeline-items::before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: var(--main-color);
+    left: calc(50% - 1px);
+  }
+
+  .timeline-item {
+    margin-bottom: 40px;
+    width: 100%;
+    position: relative;
+  }
+
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-item:nth-child(odd) {
+    padding-right: calc(50% + 30px);
+    text-align: right;
+  }
+
+  .timeline-item:nth-child(even) {
+    padding-left: calc(50% + 30px);
+  }
+
+  .timeline-dot {
+    height: 21px;
+    width: 21px;
+    background-color: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
+    position: absolute;
+    left: calc(50% - 8px);
+    border-radius: 50%;
+    top: 10px;
+  }
+
+  .timeline-date {
+    font-size: 30px;
+    font-weight: 800;
+    color: white;
+    margin: 6px 0 15px;
+  }
+
+  .timeline-content {
+    background-color: var(--bg-color);
+    border: 3px solid var(--main-color);
+    padding: 30px 50px;
+    border-radius: 4rem;
+    box-shadow: 0 0 10px var(--main-color);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+
+  .timeline-content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--main-color);
+  }
+
+  .timeline-content h3 {
+    font-size: 20px;
+    font-style: italic;
+    margin: 0 0 10px;
+    font-weight: 500;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+
+  .timeline-content p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--bg-color);
+    width: 50px;
+  }
+
+  .services {
+    background: var(--bg-color);
+  }
+
+  .services h2 {
+    margin-bottom: 5rem;
+  }
+
+  .services-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .service-box {
+    background-color: var(--main-color);
+    min-height: 300px;
+    border-radius: 3rem;
+    border: 5px solid transparent;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+  }
+
+  .service-box:hover {
+    background: white;
+    color: black;
+    border: 5px solid var(--main-color);
+    transform: scale(1.03);
+  }
+
+  .service-box .service-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    max-height: 200px;
+    justify-content: left;
+    align-items: center;
+    padding: 2rem 2rem;
+  }
+
+  .service-info h4 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 2;
+  }
+
+  .service-info p {
+    font-size: 1.6rem;
+    font-weight: 600;
+    max-height: 100px;
+    line-height: 1.7;
+    margin: auto;
+  }
+
+  .service-info ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .service-info ul li {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.9;
+  }
+
+  .portfolio {
+    background: var(--second-bg-color);
+  }
+
+  .portfolio h2 {
+    margin-bottom: 5rem;
+  }
+
+  .testimonials {
+    background: var(--second-bg-color);
+  }
+
+  .testimonials-box {
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .testimonials .heading {
+    margin-bottom: 5rem;
+  }
+
+  .testimonials-box img {
+    width: 15rem;
+    border-radius: 50%;
+    border: 3px solid var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .testimonial-item {
+    min-height: 550px;
+    max-width: 450px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 3px solid rgba(238, 238, 238, 0.2);
+    border-radius: 2rem;
+    margin: 0 2rem;
+    padding: 30px 60px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    color: white;
+    transition: 0.4s ease-in-out;
+  }
+
+  .testimonial-item:hover {
+    border: 3px solid var(--main-color);
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0 50px var(--main-color);
+  }
+
+  .testimonial-item h2 {
+    font-size: 2.8rem;
+  }
+
+  .testimonial-item p {
+    font-size: 1.3rem;
+  }
+  .testimonial-item a {
+    font-size: 2.5rem;
+    color: #d93025;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  #star {
+    color: gold;
+    font-size: 2rem;
+  }
+
+  .contact {
+    background-color: var(--bg-color);
+  }
+
+  .contact h2 {
+    margin-bottom: 3rem;
+  }
+
+  .contact-info {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+  }
+
+  .contact-info p {
+    margin: 0.5rem 0;
+  }
+
+  .contact form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin: 5rem auto;
+    text-align: center;
+  }
+
+  .contact form .input-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .contact form .input-box input,
+  .contact form textarea {
+    width: 100%;
+    padding: 2.5rem;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    background: var(--bg-color);
+    border-radius: 2rem;
+    border: 2px solid var(--main-color);
+    margin: 1.5rem 0;
+    resize: none;
+  }
+
+  .contact form .btn {
+    margin-top: 2rem;
+  }
+
+  .footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background-color: var(--second-bg-color);
+  }
+
+  .footer .social {
+    text-align: center;
+    padding-bottom: 25px;
+    color: var(--main-color);
+  }
+
+  .footer .social a {
+    font-size: 25px;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3s ease-in-out;
+  }
+
+  .footer .social a:hover {
+    transform: scale(1.2) translateY(-10px);
+    background-color: var(--main-color);
+    color: black;
+    box-shadow: 0 0 25px var(--main-color);
+  }
+
+  .footer ul {
+    margin-top: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .footer ul li a {
+    color: white;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease-in-out;
+  }
+
+  .footer ul li a:hover {
+    border-bottom: 3px solid var(--main-color);
+  }
+
+  .footer ul li {
+    display: inline-block;
+    padding: 0 15px;
+  }
+
+  .footer .copyright {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  @media (max-width: 1285px) {
+    html {
+      font-size: 55%;
+    }
+
+    .services-container {
+      padding-bottom: 7rem;
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0 5rem;
+    }
+  }
+
+  @media (max-width: 991px) {
+    header {
+      padding: 2rem 3%;
+    }
+
+    section {
+      padding: 10rem 3% 2rem;
+    }
+
+    .timeline-items::before {
+      left: 7px;
+    }
+
+    .timeline-item:nth-child(odd) {
+      padding-right: 0;
+      text-align: left;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+      padding-left: 37px;
+    }
+
+    .timeline-dot {
+      left: 0;
+    }
+
+    .services {
+      padding-bottom: 7rem;
+    }
+
+    .testimonials .wrapper {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .contact form {
+      flex-direction: column;
+    }
+
+    .footer {
+      padding: 2rem 3%;
+    }
+  }
+
+  @media (max-width: 895px) {
+    #menu-icon {
+      display: block;
+    }
+
+    .home-img img {
+      position: relative;
+      top: 3rem;
+      width: 50vw;
+      height: 50vw;
+      border-radius: 50%;
+      box-shadow: 0 0 25px var(--main-color);
+
+      transition: 0.4s ease-in-out;
+    }
+
+    .navbar {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 50%;
+      padding: 1rem 3%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom-left-radius: 2rem;
+      border-left: 2px solid var(--main-color);
+      border-bottom: 2px solid var(--main-color);
+      display: none;
+    }
+
+    .navbar.active {
+      display: block;
+    }
+
+    .navbar a {
+      display: block;
+      font-size: 2rem;
+      margin: 3rem 0;
+      color: white;
+    }
+
+    .home {
+      flex-direction: column-reverse;
+      margin: 5rem 4rem;
+    }
+
+    .home-content h3 {
+      font-size: 2.6rem;
+    }
+
+    .home-content h1 {
+      font-size: 8rem;
+      margin-top: 3rem;
+    }
+
+    .home-content p {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .home-img img {
+      width: 56vw;
+    }
+
+    .services h2 {
+      margin-bottom: 3rem;
+    }
+
+    .services-container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .service-box .service-info {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        max-height: 100px;
+        justify-content: left;
+        align-items: center;
+        padding: 1px 1px;
+      }
+    }
+
+    .education {
+      padding: 100px 15px;
+      background: var(--second-bg-color);
+      color: var(--text-color);
+    }
+
+    .footer ul li a {
+      color: var(--text-color);
+    }
+
+    .contact {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    body.light-mode .contact {
+      background-color: var(--light-bg-color);
+      color: var(--light-text-color);
+    }
+    .error-txt {
+      font-size: 14.5px;
+      color: #d93025;
+      text-align: center;
+      display: none;
+    }
+    .error .error-txt {
+      display: block;
+    }
+3. my protfolio.js
+javascript
+// Toggle navbar visibility on small screens
+const menuIcon = document.querySelector("#menu-icon");
+const navbar = document.querySelector(".navbar");
+menuIcon.onclick = () => {
+  menuIcon.classList.toggle("bx-x");
+  navbar.classList.toggle("active");
+};
+
+// Highlight active section in the navbar
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("header nav a");
+window.onscroll = () => {
+  const top = window.scrollY;
+  sections.forEach((sec) => {
+    const offset = sec.offsetTop - 150;
+    const height = sec.offsetHeight;
+    const id = sec.getAttribute("id");
+    if (top >= offset && top < offset + height) {
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        const activeLink = document.querySelector(`header nav a[href*=${id}]`);
+        if (activeLink) {
+          activeLink.classList.add("active");
+        }
+      });
+    }
+  });
+};
+
+// Dark mode toggle functionality
+const darkModeToggle = document.querySelector("#darkmode-toggle");
+const body = document.querySelector("body");
+const icon = document.querySelector(".btn__icon");
+let isDarkMode = localStorage.getItem("darkmode") === "true"; // Load dark mode state from local storage
+
+const toggleDarkMode = () => {
+  document.documentElement.style.setProperty(
+    "--bg-color",
+    isDarkMode ? "#080808" : "#f0f0f0"
+  );
+  document.documentElement.style.setProperty(
+    "--second-bg-color",
+    isDarkMode ? "#131313" : "#e0e0e0"
+  );
+  document.documentElement.style.setProperty(
+    "--text-color",
+    isDarkMode ? "white" : "#333"
+  );
+  document.documentElement.style.setProperty(
+    "--main-color",
+    isDarkMode ? "#00ffee" : "#fa8128"
+  );
+  body.classList.toggle("darkmode", isDarkMode);
+  updateIcon();
+};
+
+darkModeToggle.addEventListener("click", () => {
+  isDarkMode = !isDarkMode;
+  store(isDarkMode);
+  toggleDarkMode();
+});
+
+function store(value) {
+  localStorage.setItem("darkmode", value);
+}
+
+function updateIcon() {
+  icon.classList.add("animated");
+  if (isDarkMode) {
+    icon.classList.add("fa-sun");
+    icon.classList.remove("fa-moon");
+  } else {
+    icon.classList.add("fa-moon");
+    icon.classList.remove("fa-sun");
+  }
+  setTimeout(() => {
+    icon.classList.remove("animated");
+  }, 500); // Remove the animation class after it completes
+}
+
+// Initialize dark mode on page load
+toggleDarkMode();
+
+// Simple success/error handling for the contact form (Formspree)
+const contactForm = document.querySelector("#contact-form");
+if (contactForm) {
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = new FormData(contactForm);
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+      if (response.ok) {
+        if (window.Swal) {
+          Swal.fire({
+            icon: "success",
+            title: "Message sent!",
+            text: "Thanks for reaching out, I'll get back to you soon.",
+          });
+        } else {
+          alert("Message sent! Thanks for reaching out.");
+        }
+        contactForm.reset();
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (err) {
+      if (window.Swal) {
+        Swal.fire({
+          icon: "error",
+          title: "Something went wrong",
+          text: "Please try again in a moment.",
+        });
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    }
+  });
+}
+Downloadable files bhi upar attached hain — dono me se koi bhi use kar sakte ho.
+
+1783569268054_Screenshot 2026-07-08 203806.png
+1783569277799_Screenshot 2026-07-08 203845.png
+1783569289006_Screenshot 2026-07-06 203633.png
+Patna, Bihar
+9651123891
+archanaprajapati24@navgurukul.org
+aur jo project hai unke font chhote hai aur unka box bda hai mujhe chhota box chahiye skill aur cetirifcate agle kro n skill agle choto chote box me ho aur usme rating bhi di ho aur certifcate agle ho aur phot bhi unki add ho usme aur baki sahi hai ye kro skilla section agle kro certificate ka gle kro aur skill me chhote chhote bos me rating dete ke liye jaise bnao aur certificate aglerhe ok ye hai teeno aur ha jo resume likha hai vaisa same content mt likho thikhai meri profile aur resume vaisa bnao data anytic mis ME program accoisate malt mujhe aange data me hi aange jana hai to vaise bnao thoda baki color mt chnage krna ha style change kr skte ho aur hai font chhote nhi hone chahiyejaie skill me the certicate box ke under jo the
+
+Show more
+
+Ran 3 commands, edited 2 files
+Ran 3 commands, edited 2 files
+Good, file still intact. Let me redo the edit.
+
+
+Sed tool selection ke liye soch-samajh ki
+Sed tool selection ke liye soch-samajh ki
+Now let's update the typing steps to match the new longest word, and append the new compact CSS components.
+
+
+Ran 2 commands, edited 2 files, viewed a file
+Ran 2 commands, edited 2 files, viewed a file
+Now let's update nav, bio, skills section, add certificates section, and compact the portfolio section.
+
+
+Edited 2 files
+Edited 2 files
+Now replace the Skills section with compact rated skill-cards:
+
+
+Replace big skill boxes with compact skill-card grid with star ratings, and remove certifications (moved to their own section)
+Replace big skill boxes with compact skill-card grid with star ratings, and remove certifications (moved to their own section)
+Now let's compact the portfolio project section:
+
+
+Replace large project service-boxes with compact project-card grid
+Replace large project service-boxes with compact project-card grid
+ye ab code new code do pura portfolio ka
+
+
+Orchestrated complete portfolio code compilation and delivery
+Orchestrated complete portfolio code compilation and delivery
+Files upar attach kar di hain (index.html, CSS, JS + teeno certificate images) — direct download kar sakte ho. Ab pura HTML code neeche bhi de raha hoon:
+
+index.html
+html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archana Prajapati | Portfolio</title>
+    <link rel="stylesheet" href="my protfolio.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="#home" class="logo">Archana's <span>Portfolio</span></a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div id="darkmode-toggle" class="btn">
+            <div class="btn__indicator">
+              <div class="btn__icon-container">
+                <i class="btn__icon fa-solid"></i>
+              </div>
+            </div>
+          </div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Hi, I am <span>Archana</span></h1>
+            <h3 class="text-animation">I'm a <span></span></h3>
+            <p>I currently work as a Program Associate handling MIS reporting, scholarship coordination, and stakeholder
+                communication — but data is where my real interest lies. Day to day, I build dashboards in Power BI,
+                Tableau and Looker Studio, and I'm steadily leveling up my SQL and Python so I can move deeper into
+                Data Analytics. Every dataset I clean and every report I build is a step toward that goal.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/archana-prajapati-805433311/" target="_blank"><i
+                        class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/archanaprajapat" target="_blank"><i class='bx bxl-github'></i></a>
+                <a href="https://x.com/ArchanaPra54130" target="_blank"><i class='bx bxl-twitter'></i></a>
+                <a href="mailto:archanaprajapati24@navgurukul.org"><i class='bx bx-envelope'></i></a>
+            </div>
+            <div class="btn-group">
+                <a href="https://drive.google.com/file/d/1huw6bYMttLRLbXp6d1GndlO2_BQGgCOk/view?usp=sharing" download class="btn">Download Resume</a>
+                <a href="#contact" class="btn">Contact</a>
+            </div>
+        </div>
+        <div class="home-img">
+            <img src="archu.jpg" alt="Archana Prajapati">
+        </div>
+    </section>
+
+    <section class="experience" id="experience">
+        <h2 class="heading">Work <span>Experience</span></h2>
+        <div class="timeline-items">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Aug 2025 – Present</div>
+                <div class="timeline-content">
+                    <h3>Program Associate &amp; FFE Scholarship Facilitator</h3>
+                    <p>Youth Dreamers Foundation, Patna, Bihar (Hybrid) — Facilitated scholarship programs across all 38
+                        districts of Bihar, supporting 1000+ students in securing scholarships worth over ₹2 Crore (VUS,
+                        Globe, SBI, LIC, Vidyadhan, FFE, APS, Tata Capital). Coordinated end-to-end applications, conducted
+                        eligibility interviews, and built Power BI &amp; Looker Studio dashboards for scholarship tracking.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Jun 2024 – Aug 2025</div>
+                <div class="timeline-content">
+                    <h3>Admissions Intern</h3>
+                    <p>NavGurukul Foundation for Social Welfare — Coordinated Learning Round interviews for prospective
+                        candidates, conducted and documented Culture Fit interviews, and maintained interview schedules
+                        and feedback records while working closely with the People &amp; Culture team.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Jan 2021 – May 2024</div>
+                <div class="timeline-content">
+                    <h3>Volunteer</h3>
+                    <p>Educate Girls — Supported student enrollment drives and community outreach, and helped maintain
+                        accurate student records while engaging families and tracking enrollment progress for
+                        out-of-school girls.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="education" id="education">
+        <h2 class="heading">Education</h2>
+        <div class="timeline-items">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2024 – 2025</div>
+                <div class="timeline-content">
+                    <h3>Software Programming &amp; Web Development</h3>
+                    <p>NavGurukul, Udaipur, Rajasthan || Jun 2024 – Aug 2025</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2020 – 2023</div>
+                <div class="timeline-content">
+                    <h3>Bachelor of Science (B.Sc)</h3>
+                    <p>Bundelkhand University, Jhansi, UP (Banda) || Aug 2020 – Apr 2023</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2019 – 2020</div>
+                <div class="timeline-content">
+                    <h3>Senior Secondary (XII)</h3>
+                    <p>Hindu Inter College, Atarra, Banda || Jul 2019 – Mar 2020</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2017 – 2018</div>
+                <div class="timeline-content">
+                    <h3>Secondary (X)</h3>
+                    <p>Sitaram Bholanath School, Atarra, Banda || Jul 2017 – Mar 2018</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="skills">
+        <h2 class="heading">My <span>Skills</span></h2>
+        <p class="section-sub">A mix of program &amp; data coordination tools, plus the analytics skills I'm actively building.</p>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">MS Excel</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Data Analysis</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Google Sheets</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Looker Studio</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Power BI</span>
+                    <span class="skill-level">Intermediate</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Tableau</span>
+                    <span class="skill-level">Intermediate</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">SQL</span>
+                    <span class="skill-level">Basic</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Python</span>
+                    <span class="skill-level">Basic</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">HTML, CSS &amp; JS</span>
+                    <span class="skill-level">Basic</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Candidate Coordination</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Stakeholder Comm.</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Culture Fit Assessment</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">MS Word</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Canva &amp; Figma</span>
+                    <span class="skill-level">Intermediate</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="certificates" id="certificates">
+        <h2 class="heading">My <span>Certificates</span></h2>
+        <div class="cert-heading-row">
+            <img src="archu.jpg" alt="Archana Prajapati">
+            <p>Verified credentials from NIELIT/NCVET, NavGurukul and Coursera (Google).</p>
+        </div>
+        <div class="certificates-grid">
+            <div class="cert-card">
+                <img src="cert-nielit.jpg" alt="NIELIT O Level Certificate for Skill Competency">
+                <div class="cert-card-body">
+                    <h4>O Level – Skill Competency Certificate</h4>
+                    <p>NIELIT, recognised by NCVET. 540 hours, Credits at NCrF/NSQF Level 4, Grade C.</p>
+                    <span>Issued: Dec 2024</span>
+                </div>
+            </div>
+            <div class="cert-card">
+                <img src="cert-navgurukul.jpg" alt="NavGurukul Certificate of Completion">
+                <div class="cert-card-body">
+                    <h4>Software Programming Course</h4>
+                    <p>NavGurukul Foundation, Udaipur Campus. Learned HTML, CSS, JavaScript, Python, basic React.js and Figma.</p>
+                    <span>May 2024 – Sep 2025</span>
+                </div>
+            </div>
+            <div class="cert-card">
+                <img src="cert-coursera.jpg" alt="Coursera Google Data Analytics Certificate">
+                <div class="cert-card-body">
+                    <h4>Google Data Analytics Professional Certificate</h4>
+                    <p>Coursera, 9 courses covering spreadsheets, SQL, Tableau and Python for data analytics.</p>
+                    <span>Issued: Jul 2026</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Portfolio &amp; <span>Work</span></h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h4>Image Gallery Website</h4>
+                <p>Built with HTML, CSS &amp; JS</p>
+                <a href="https://archanaprajapat.github.io/image-gallery/" target="_blank" class="btn">View Project</a>
+            </div>
+            <div class="project-card">
+                <h4>Power BI Dashboard</h4>
+                <p>Scholarship &amp; program tracking dashboard</p>
+                <a href="https://drive.google.com/file/d/1u7koCUvfoyChNRv97exFZaDPuHEXVXnX/view" target="_blank" class="btn">View Dashboard</a>
+            </div>
+            <div class="project-card">
+                <h4>Tableau Dashboard</h4>
+                <p>Data visualization &amp; reporting</p>
+                <a href="https://drive.google.com/file/d/1Q5K3hALZB1P7089Ivk1JBFW0p3BV0R3g/view" target="_blank" class="btn">View Dashboard</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+        <div class="contact-info">
+            <p><i class='bx bx-map'></i> Patna, Bihar</p>
+            <p><i class='bx bx-phone'></i> 9651123891</p>
+            <p><i class='bx bx-envelope'></i> archanaprajapati24@navgurukul.org</p>
+        </div>
+        <form action="https://formspree.io/f/xqazzoao"
+        method="POST" id="contact-form">
+            <div class="input-group">
+                <div class="input-box">
+                    <input type="text" placeholder="Full Name" id="name" name="name" autocomplete="off" required/>
+                    
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Email" id="email" autocomplete="off" required name="email"/>
+                    
+                </div>
+                <div class="input-box">
+                    <input type="number" placeholder="Phone Number" id="phone" name="phone"  autocomplete="off" required/>
+                    
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Subject" id="subject" autocomplete="off" name="subject" required/>
+                    
+                </div>
+            </div>
+            <div class="input-group-2">
+                <textarea id="message" cols="30" rows="10" placeholder="Your Message" name="textarea"
+                    autocomplete="off" required></textarea>
+                
+                <input type="submit" value="Send Message" class="btn">
+            </div>
+        </form>
+    </section>
+    
+ <footer class="footer">
+        <div class="social">
+            <a href="https://www.linkedin.com/in/archana-prajapati-805433311/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/archanaprajapat" target="_blank"><i class='bx bxl-github'></i></a>
+            <a href="https://x.com/ArchanaPra54130" target="_blank"><i class='bx bxl-twitter'></i></a>
+        </div>
+        <ul class="list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <p class="copyright">
+            <i class='bx bx-copyright'></i> | Created By Archana | 2024 - 2026
+        </p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="my protfolio.js"></script>
+</body>
+
+</html>
+Important: CSS aur JS file me size limit ki wajah se bas HTML yahan paste kiya hai — woh dono already same naam se attached hain upar (my protfolio.css, my protfolio.js), unhe waisa hi rakhna (bina change kiye), sirf ye HTML replace karna.
+
+Setup steps:
+
+Repo me archu.jpg ke saath ab teen naye images bhi daalo: cert-nielit.jpg, cert-navgurukul.jpg, cert-coursera.jpg (sab attached hain upar)
+index.html ko upar wale code se replace karo
+my protfolio.css aur my protfolio.js attached files se replace karo
+Commit + push
+Kya badla:
+
+Skills ab chhote-chhote cards me hain, har ek ke saath star rating (Advanced/Intermediate/Basic ke hisaab se)
+Alag "Certificates" section bana hai jisme tumhare teeno certificates ki image + details hain, saath me tumhari photo bhi
+Portfolio project cards bhi compact kar diye
+Home bio ab tumhare Data Analytics ki taraf badhne wale goal ko highlight karta hai (resume se hoo-ba-hoo copy nahi kiya)
+Colors bilkul same rakhe, sirf card sizing/style change ki
+
+Index
+Code · HTML 
+
+My protfolio
+Code · CSS 
+
+My protfolio
+JS 
+
+Cert nielit
+Image · JPG 
+
+Cert navgurukul
+Image · JPG 
+
+Cert coursera
+Image · JPG 
+1783609187102_Screenshot 2026-07-08 212441.png
+1783609200406_image.png
+1783609276900_Screenshot 2026-07-09 121829.png
+1783609297674_Screenshot 2026-07-09 121845.png
+1783609315850_Screenshot 2026-07-09 121856.png
+ye do photo add kro mere portfolio me aur ha photo me change nhi aana chahiye aur jo upr certificate diya hai wo bhi add kr do aur skill aisa chahiye mujhe
+
+
+Orchestrated photo integration, certificate addition, aur skills section redesign
+Orchestrated photo integration, certificate addition, aur skills section redesign
+
+
+You are out of free messages until 1:20 AM
+
+
+
+
+Claude is AI and can make mistakes. Please double-check responses.
+
+
+Index · HTML
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archana Prajapati | Portfolio</title>
+    <link rel="stylesheet" href="my protfolio.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+ 
+<body>
+ 
+    <header class="header">
+        <a href="#home" class="logo">Archana's <span>Portfolio</span></a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div id="darkmode-toggle" class="btn">
+            <div class="btn__indicator">
+              <div class="btn__icon-container">
+                <i class="btn__icon fa-solid"></i>
+              </div>
+            </div>
+          </div>
+    </header>
+ 
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Hi, I am <span>Archana</span></h1>
+            <h3 class="text-animation">I'm a <span></span></h3>
+            <p>I currently work as a Program Associate handling MIS reporting, scholarship coordination, and stakeholder
+                communication — but data is where my real interest lies. Day to day, I build dashboards in Power BI,
+                Tableau and Looker Studio, and I'm steadily leveling up my SQL and Python so I can move deeper into
+                Data Analytics. Every dataset I clean and every report I build is a step toward that goal.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/archana-prajapati-805433311/" target="_blank"><i
+                        class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/archanaprajapat" target="_blank"><i class='bx bxl-github'></i></a>
+                <a href="https://x.com/ArchanaPra54130" target="_blank"><i class='bx bxl-twitter'></i></a>
+                <a href="mailto:archanaprajapati24@navgurukul.org"><i class='bx bx-envelope'></i></a>
+            </div>
+            <div class="btn-group">
+                <a href="https://drive.google.com/file/d/1huw6bYMttLRLbXp6d1GndlO2_BQGgCOk/view?usp=sharing" download class="btn">Download Resume</a>
+                <a href="#contact" class="btn">Contact</a>
+            </div>
+        </div>
+        <div class="home-img">
+            <img src="archu.jpg" alt="Archana Prajapati">
+        </div>
+    </section>
+ 
+    <section class="experience" id="experience">
+        <h2 class="heading">Work <span>Experience</span></h2>
+        <div class="timeline-items">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Aug 2025 – Present</div>
+                <div class="timeline-content">
+                    <h3>Program Associate &amp; FFE Scholarship Facilitator</h3>
+                    <p>Youth Dreamers Foundation, Patna, Bihar (Hybrid) — Facilitated scholarship programs across all 38
+                        districts of Bihar, supporting 1000+ students in securing scholarships worth over ₹2 Crore (VUS,
+                        Globe, SBI, LIC, Vidyadhan, FFE, APS, Tata Capital). Coordinated end-to-end applications, conducted
+                        eligibility interviews, and built Power BI &amp; Looker Studio dashboards for scholarship tracking.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Jun 2024 – Aug 2025</div>
+                <div class="timeline-content">
+                    <h3>Admissions Intern</h3>
+                    <p>NavGurukul Foundation for Social Welfare — Coordinated Learning Round interviews for prospective
+                        candidates, conducted and documented Culture Fit interviews, and maintained interview schedules
+                        and feedback records while working closely with the People &amp; Culture team.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Jan 2021 – May 2024</div>
+                <div class="timeline-content">
+                    <h3>Volunteer</h3>
+                    <p>Educate Girls — Supported student enrollment drives and community outreach, and helped maintain
+                        accurate student records while engaging families and tracking enrollment progress for
+                        out-of-school girls.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <section class="education" id="education">
+        <h2 class="heading">Education</h2>
+        <div class="timeline-items">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2024 – 2025</div>
+                <div class="timeline-content">
+                    <h3>Software Programming &amp; Web Development</h3>
+                    <p>NavGurukul, Udaipur, Rajasthan || Jun 2024 – Aug 2025</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2020 – 2023</div>
+                <div class="timeline-content">
+                    <h3>Bachelor of Science (B.Sc)</h3>
+                    <p>Bundelkhand University, Jhansi, UP (Banda) || Aug 2020 – Apr 2023</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2019 – 2020</div>
+                <div class="timeline-content">
+                    <h3>Senior Secondary (XII)</h3>
+                    <p>Hindu Inter College, Atarra, Banda || Jul 2019 – Mar 2020</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2017 – 2018</div>
+                <div class="timeline-content">
+                    <h3>Secondary (X)</h3>
+                    <p>Sitaram Bholanath School, Atarra, Banda || Jul 2017 – Mar 2018</p>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <section class="services" id="skills">
+        <h2 class="heading">My <span>Skills</span></h2>
+        <p class="section-sub">A mix of program &amp; data coordination tools, plus the analytics skills I'm actively building.</p>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">MS Excel</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Data Analysis</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Google Sheets</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Looker Studio</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Power BI</span>
+                    <span class="skill-level">Intermediate</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Tableau</span>
+                    <span class="skill-level">Intermediate</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">SQL</span>
+                    <span class="skill-level">Basic</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Python</span>
+                    <span class="skill-level">Basic</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">HTML, CSS &amp; JS</span>
+                    <span class="skill-level">Basic</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Candidate Coordination</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Stakeholder Comm.</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Culture Fit Assessment</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">MS Word</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Canva &amp; Figma</span>
+                    <span class="skill-level">Intermediate</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <section class="certificates" id="certificates">
+        <h2 class="heading">My <span>Certificates</span></h2>
+        <div class="cert-heading-row">
+            <img src="archu.jpg" alt="Archana Prajapati">
+            <p>Verified credentials from NIELIT/NCVET, NavGurukul and Coursera (Google).</p>
+        </div>
+        <div class="certificates-grid">
+            <div class="cert-card">
+                <img src="cert-nielit.jpg" alt="NIELIT O Level Certificate for Skill Competency">
+                <div class="cert-card-body">
+                    <h4>O Level – Skill Competency Certificate</h4>
+                    <p>NIELIT, recognised by NCVET. 540 hours, Credits at NCrF/NSQF Level 4, Grade C.</p>
+                    <span>Issued: Dec 2024</span>
+                </div>
+            </div>
+            <div class="cert-card">
+                <img src="cert-navgurukul.jpg" alt="NavGurukul Certificate of Completion">
+                <div class="cert-card-body">
+                    <h4>Software Programming Course</h4>
+                    <p>NavGurukul Foundation, Udaipur Campus. Learned HTML, CSS, JavaScript, Python, basic React.js and Figma.</p>
+                    <span>May 2024 – Sep 2025</span>
+                </div>
+            </div>
+            <div class="cert-card">
+                <img src="cert-coursera.jpg" alt="Coursera Google Data Analytics Certificate">
+                <div class="cert-card-body">
+                    <h4>Google Data Analytics Professional Certificate</h4>
+                    <p>Coursera, 9 courses covering spreadsheets, SQL, Tableau and Python for data analytics.</p>
+                    <span>Issued: Jul 2026</span>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Portfolio &amp; <span>Work</span></h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h4>Image Gallery Website</h4>
+                <p>Built with HTML, CSS &amp; JS</p>
+                <a href="https://archanaprajapat.github.io/image-gallery/" target="_blank" class="btn">View Project</a>
+            </div>
+            <div class="project-card">
+                <h4>Power BI Dashboard</h4>
+                <p>Scholarship &amp; program tracking dashboard</p>
+                <a href="https://drive.google.com/file/d/1u7koCUvfoyChNRv97exFZaDPuHEXVXnX/view" target="_blank" class="btn">View Dashboard</a>
+            </div>
+            <div class="project-card">
+                <h4>Tableau Dashboard</h4>
+                <p>Data visualization &amp; reporting</p>
+                <a href="https://drive.google.com/file/d/1Q5K3hALZB1P7089Ivk1JBFW0p3BV0R3g/view" target="_blank" class="btn">View Dashboard</a>
+            </div>
+        </div>
+    </section>
+ 
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+        <div class="contact-info">
+            <p><i class='bx bx-map'></i> Patna, Bihar</p>
+            <p><i class='bx bx-phone'></i> 9651123891</p>
+            <p><i class='bx bx-envelope'></i> archanaprajapati24@navgurukul.org</p>
+        </div>
+        <form action="https://formspree.io/f/xqazzoao"
+        method="POST" id="contact-form">
+            <div class="input-group">
+                <div class="input-box">
+                    <input type="text" placeholder="Full Name" id="name" name="name" autocomplete="off" required/>
+                    
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Email" id="email" autocomplete="off" required name="email"/>
+                    
+                </div>
+                <div class="input-box">
+                    <input type="number" placeholder="Phone Number" id="phone" name="phone"  autocomplete="off" required/>
+                    
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Subject" id="subject" autocomplete="off" name="subject" required/>
+                    
+                </div>
+            </div>
+            <div class="input-group-2">
+                <textarea id="message" cols="30" rows="10" placeholder="Your Message" name="textarea"
+                    autocomplete="off" required></textarea>
+                
+                <input type="submit" value="Send Message" class="btn">
+            </div>
+        </form>
+    </section>
+    
+ <footer class="footer">
+        <div class="social">
+            <a href="https://www.linkedin.com/in/archana-prajapati-805433311/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/archanaprajapat" target="_blank"><i class='bx bxl-github'></i></a>
+            <a href="https://x.com/ArchanaPra54130" target="_blank"><i class='bx bxl-twitter'></i></a>
+        </div>
+        <ul class="list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <p class="copyright">
+            <i class='bx bx-copyright'></i> | Created By Archana | 2024 - 2026
+        </p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="my protfolio.js"></script>
+</body>
+ 
+</html>
+ 
