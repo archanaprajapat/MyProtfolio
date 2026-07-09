@@ -1,116 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Analyst Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Archana Prajapati | Portfolio</title>
+    <link rel="stylesheet" href="my protfolio.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
 
     <header class="header">
-        <a href="#" class="logo">Data<span>Analyst.</span></a>
-        
+        <a href="#home" class="logo">Archana's <span>Portfolio</span></a>
+        <i class='bx bx-menu' id="menu-icon"></i>
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
             <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
             <a href="#certificates">Certificates</a>
+            <a href="#portfolio">Portfolio</a>
             <a href="#contact">Contact</a>
         </nav>
-
-        <div class="header-actions">
-            <button id="darkmode-toggle" class="btn-toggle">
-                <i class="fa-solid fa-moon btn__icon"></i>
-            </button>
-            <div class="bx bx-menu" id="menu-icon"></div>
-        </div>
+        <div id="darkmode-toggle" class="btn">
+            <div class="btn__indicator">
+              <div class="btn__icon-container">
+                <i class="btn__icon fa-solid"></i>
+              </div>
+            </div>
+          </div>
     </header>
 
     <section class="home" id="home">
         <div class="home-content">
-            <h3>Hello, It's Me</h3>
-            <h1>Your Name</h1>
-            <h3>And I'm a <span class="multiple-text">Data Analyst</span></h3>
-            <p>I transform raw data into actionable insights. Expert in discovering trends, building interactive dashboards, and driving data-backed decisions.</p>
-            <div class="social-media">
-                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#"><i class="fa-brands fa-github"></i></a>
-                <a href="#"><i class="fa-solid fa-envelope"></i></a>
+            <h1>Hi, I am <span>Archana</span></h1>
+            <h3 class="text-animation">I'm a <span></span></h3>
+            <p>I currently work as a Program Associate handling MIS reporting, scholarship coordination, and stakeholder
+                communication — but data is where my real interest lies. Day to day, I build dashboards in Power BI,
+                Tableau and Looker Studio, and I'm steadily leveling up my SQL and Python so I can move deeper into
+                Data Analytics. Every dataset I clean and every report I build is a step toward that goal.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/archana-prajapati-805433311/" target="_blank"><i
+                        class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/archanaprajapat" target="_blank"><i class='bx bxl-github'></i></a>
+                <a href="https://x.com/ArchanaPra54130" target="_blank"><i class='bx bxl-twitter'></i></a>
+                <a href="mailto:archanaprajapati24@navgurukul.org"><i class='bx bx-envelope'></i></a>
             </div>
-            <a href="#" class="btn">Download Resume</a>
+            <div class="btn-group">
+                <a href="https://drive.google.com/file/d/1huw6bYMttLRLbXp6d1GndlO2_BQGgCOk/view?usp=sharing" download class="btn">Download Resume</a>
+                <a href="#contact" class="btn">Contact</a>
+            </div>
         </div>
-
         <div class="home-img">
-            <img src="images/laptop-photo.jpg" alt="Laptop Working Photo">
+            <img src="archu.jpg" alt="Archana Prajapati">
         </div>
     </section>
 
-    <section class="about" id="about">
-        <div class="about-img">
-            <img src="images/professional-photo.jpg" alt="Professional Photo">
-        </div>
-
-        <div class="about-content">
-            <h2 class="heading">About <span>Me</span></h2>
-            <h3>Data Analyst & Problem Solver!</h3>
-            <p>Mera maqsad data ke piche chhupi kahani ko samajhna aur use business growth ke liye sahi disha me istemal karna hai. Main complex datasets ko clean, analyze aur visualize karne me mahir hu taaki sahi decisions liye ja sakein.</p>
-            <a href="#" class="btn">Read More</a>
-        </div>
-    </section>
-
-    <section class="skills" id="skills">
-        <h2 class="heading">My <span>Skills</span></h2>
-        
-        <div class="skills-container">
-            <div class="skills-box">
-                <h3><i class="fa-solid fa-code"></i> Technical & Data Skills</h3>
-                <ul class="skills-list">
-                    <li>Python (Pandas, NumPy)</li>
-                    <li>SQL (Queries, Joins, Subqueries)</li>
-                    <li>Data Visualization (Power BI / Tableau)</li>
-                    <li>Excel (Advanced formulas, Pivot Tables)</li>
-                    <li>Statistical Analysis</li>
-                </ul>
-            </div>
-
-            <div class="skills-box">
-                <h3><i class="fa-solid fa-list-check"></i> Management & Core Skills</h3>
-                <ul class="skills-list">
-                    <li>Program Management</li>
-                    <li>Team Coordination</li>
-                    <li>Effective Communication</li>
-                    <li>Problem Solving</li>
-                    <li>Stakeholder Management</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="projects" id="projects">
-        <h2 class="heading">Latest <span>Projects</span></h2>
-
-        <div class="projects-container">
-            <div class="project-card">
-                <div class="project-info">
-                    <h4>Sales Performance Dashboard</h4>
-                    <p>Created an interactive Power BI dashboard to analyze sales data, track KPIs, and identify regional growth opportunities.</p>
-                    <div class="btn-center">
-                        <a href="#" class="btn">View Project</a>
-                    </div>
+    <section class="experience" id="experience">
+        <h2 class="heading">Work <span>Experience</span></h2>
+        <div class="timeline-items">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Aug 2025 – Present</div>
+                <div class="timeline-content">
+                    <h3>Program Associate &amp; FFE Scholarship Facilitator</h3>
+                    <p>Youth Dreamers Foundation, Patna, Bihar (Hybrid) — Facilitated scholarship programs across all 38
+                        districts of Bihar, supporting 1000+ students in securing scholarships worth over ₹2 Crore (VUS,
+                        Globe, SBI, LIC, Vidyadhan, FFE, APS, Tata Capital). Coordinated end-to-end applications, conducted
+                        eligibility interviews, and built Power BI &amp; Looker Studio dashboards for scholarship tracking.</p>
                 </div>
             </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Jun 2024 – Aug 2025</div>
+                <div class="timeline-content">
+                    <h3>Admissions Intern</h3>
+                    <p>NavGurukul Foundation for Social Welfare — Coordinated Learning Round interviews for prospective
+                        candidates, conducted and documented Culture Fit interviews, and maintained interview schedules
+                        and feedback records while working closely with the People &amp; Culture team.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Jan 2021 – May 2024</div>
+                <div class="timeline-content">
+                    <h3>Volunteer</h3>
+                    <p>Educate Girls — Supported student enrollment drives and community outreach, and helped maintain
+                        accurate student records while engaging families and tracking enrollment progress for
+                        out-of-school girls.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div class="project-card">
-                <div class="project-info">
-                    <h4>Customer Churn Analysis</h4>
-                    <p>Used Python and SQL to clean customer behavior datasets and predict churn rates using logistic regression models.</p>
-                    <div class="btn-center">
-                        <a href="#" class="btn">View Project</a>
-                    </div>
+    <section class="education" id="education">
+        <h2 class="heading">Education</h2>
+        <div class="timeline-items">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2024 – 2025</div>
+                <div class="timeline-content">
+                    <h3>Software Programming &amp; Web Development</h3>
+                    <p>NavGurukul, Udaipur, Rajasthan || Jun 2024 – Aug 2025</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2020 – 2023</div>
+                <div class="timeline-content">
+                    <h3>Bachelor of Science (B.Sc)</h3>
+                    <p>Bundelkhand University, Jhansi, UP (Banda) || Aug 2020 – Apr 2023</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2019 – 2020</div>
+                <div class="timeline-content">
+                    <h3>Senior Secondary (XII)</h3>
+                    <p>Hindu Inter College, Atarra, Banda || Jul 2019 – Mar 2020</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2017 – 2018</div>
+                <div class="timeline-content">
+                    <h3>Secondary (X)</h3>
+                    <p>Sitaram Bholanath School, Atarra, Banda || Jul 2017 – Mar 2018</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="skills">
+        <h2 class="heading">My <span>Skills</span></h2>
+        <p class="section-sub">A mix of program &amp; data coordination tools, plus the analytics skills I'm actively building.</p>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">MS Excel</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Data Analysis</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Google Sheets</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Looker Studio</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Power BI</span>
+                    <span class="skill-level">Intermediate</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Tableau</span>
+                    <span class="skill-level">Intermediate</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">SQL</span>
+                    <span class="skill-level">Basic</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Python</span>
+                    <span class="skill-level">Basic</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">HTML, CSS &amp; JS</span>
+                    <span class="skill-level">Basic</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Candidate Coordination</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Stakeholder Comm.</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Culture Fit Assessment</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">MS Word</span>
+                    <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-top">
+                    <span class="skill-name">Canva &amp; Figma</span>
+                    <span class="skill-level">Intermediate</span>
+                </div>
+                <div class="skill-rating">
+                    <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>
                 </div>
             </div>
         </div>
@@ -118,36 +268,113 @@
 
     <section class="certificates" id="certificates">
         <h2 class="heading">My <span>Certificates</span></h2>
-        
-        <div class="certificates-container">
-            <div class="certificate-card">
-                <i class="fa-solid fa-certificate"></i>
-                <h4>Google Data Analytics</h4>
-                <p>Issued by Coursera - Verified Skills in SQL, Tableau, and R.</p>
+        <div class="cert-heading-row">
+            <img src="archu.jpg" alt="Archana Prajapati">
+            <p>Verified credentials from NIELIT/NCVET, NavGurukul and Coursera (Google).</p>
+        </div>
+        <div class="certificates-grid">
+            <div class="cert-card">
+                <img src="cert-nielit.jpg" alt="NIELIT O Level Certificate for Skill Competency">
+                <div class="cert-card-body">
+                    <h4>O Level – Skill Competency Certificate</h4>
+                    <p>NIELIT, recognised by NCVET. 540 hours, Credits at NCrF/NSQF Level 4, Grade C.</p>
+                    <span>Issued: Dec 2024</span>
+                </div>
             </div>
-            <div class="certificate-card">
-                <i class="fa-solid fa-certificate"></i>
-                <h4>Advanced SQL for Data Science</h4>
-                <p>Issued by Udemy - Deep dive into database optimization.</p>
+            <div class="cert-card">
+                <img src="cert-navgurukul.jpg" alt="NavGurukul Certificate of Completion">
+                <div class="cert-card-body">
+                    <h4>Software Programming Course</h4>
+                    <p>NavGurukul Foundation, Udaipur Campus. Learned HTML, CSS, JavaScript, Python, basic React.js and Figma.</p>
+                    <span>May 2024 – Sep 2025</span>
+                </div>
+            </div>
+            <div class="cert-card">
+                <img src="cert-coursera.jpg" alt="Coursera Google Data Analytics Certificate">
+                <div class="cert-card-body">
+                    <h4>Google Data Analytics Professional Certificate</h4>
+                    <p>Coursera, 9 courses covering spreadsheets, SQL, Tableau and Python for data analytics.</p>
+                    <span>Issued: Jul 2026</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Portfolio &amp; <span>Work</span></h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h4>Image Gallery Website</h4>
+                <p>Built with HTML, CSS &amp; JS</p>
+                <a href="https://archanaprajapat.github.io/image-gallery/" target="_blank" class="btn">View Project</a>
+            </div>
+            <div class="project-card">
+                <h4>Power BI Dashboard</h4>
+                <p>Scholarship &amp; program tracking dashboard</p>
+                <a href="https://drive.google.com/file/d/1u7koCUvfoyChNRv97exFZaDPuHEXVXnX/view" target="_blank" class="btn">View Dashboard</a>
+            </div>
+            <div class="project-card">
+                <h4>Tableau Dashboard</h4>
+                <p>Data visualization &amp; reporting</p>
+                <a href="https://drive.google.com/file/d/1Q5K3hALZB1P7089Ivk1JBFW0p3BV0R3g/view" target="_blank" class="btn">View Dashboard</a>
             </div>
         </div>
     </section>
 
     <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me!</span></h2>
-        <form id="contact-form" action="https://formspree.io/f/your-id" method="POST">
-            <div class="input-box">
-                <input type="text" name="name" placeholder="Full Name" required>
-                <input type="email" name="email" placeholder="Email Address" required>
+        <h2 class="heading">Contact <span>Me</span></h2>
+        <div class="contact-info">
+            <p><i class='bx bx-map'></i> Patna, Bihar</p>
+            <p><i class='bx bx-phone'></i> 9651123891</p>
+            <p><i class='bx bx-envelope'></i> archanaprajapati24@navgurukul.org</p>
+        </div>
+        <form action="https://formspree.io/f/xqazzoao"
+        method="POST" id="contact-form">
+            <div class="input-group">
+                <div class="input-box">
+                    <input type="text" placeholder="Full Name" id="name" name="name" autocomplete="off" required/>
+                    
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Email" id="email" autocomplete="off" required name="email"/>
+                    
+                </div>
+                <div class="input-box">
+                    <input type="number" placeholder="Phone Number" id="phone" name="phone"  autocomplete="off" required/>
+                    
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Subject" id="subject" autocomplete="off" name="subject" required/>
+                    
+                </div>
             </div>
-            <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
-            <div class="btn-center">
-                <button type="submit" class="btn">Send Message</button>
+            <div class="input-group-2">
+                <textarea id="message" cols="30" rows="10" placeholder="Your Message" name="textarea"
+                    autocomplete="off" required></textarea>
+                
+                <input type="submit" value="Send Message" class="btn">
             </div>
         </form>
     </section>
-
+    
+ <footer class="footer">
+        <div class="social">
+            <a href="https://www.linkedin.com/in/archana-prajapati-805433311/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/archanaprajapat" target="_blank"><i class='bx bxl-github'></i></a>
+            <a href="https://x.com/ArchanaPra54130" target="_blank"><i class='bx bxl-twitter'></i></a>
+        </div>
+        <ul class="list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <p class="copyright">
+            <i class='bx bx-copyright'></i> | Created By Archana | 2024 - 2026
+        </p>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="script.js"></script>
+    <script src="my protfolio.js"></script>
 </body>
+
 </html>
