@@ -57,17 +57,12 @@
     text-shadow: 0 0 25px var(--main-color);
   }
   
-  .navbar {
-    display: flex;
-    align-items: center;
-  }
-
   .navbar a {
     font-size: 1.8rem;
     color: var(--text-color);
     margin-left: 4rem;
     font-weight: 500;
-    transition: 0.3s ease;
+    transform: 0.3s ease;
     border-bottom: 3px solid transparent;
   }
   
@@ -202,7 +197,6 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    margin-left: 4rem;
   }
   
   .btn:hover {
@@ -845,10 +839,6 @@
       margin: 3rem 0;
       color: white;
     }
-
-    #darkmode-toggle {
-      margin-left: 0;
-    }
   
     .home {
       flex-direction: column-reverse;
@@ -929,16 +919,6 @@
     opacity: 0.75;
     max-width: 700px;
     margin: -3.5rem auto 4rem;
-  }
-
-  .skills-category-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--text-color);
-    margin: 4rem auto 2rem;
-    max-width: 1200px;
-    border-left: 4px solid var(--main-color);
-    padding-left: 1.5rem;
   }
 
   .skills-grid {
@@ -1036,7 +1016,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2.5rem;
-    align-items: stretch;
   }
 
   .cert-card {
@@ -1045,8 +1024,6 @@
     border-radius: 1.6rem;
     overflow: hidden;
     transition: 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
   }
 
   .cert-card:hover {
@@ -1064,7 +1041,6 @@
 
   .cert-card-body {
     padding: 1.8rem 2rem 2.2rem;
-    flex-grow: 1;
   }
 
   .cert-card-body h4 {
@@ -1125,12 +1101,6 @@
     line-height: 1.6;
     opacity: 0.85;
     margin-bottom: 1.4rem;
-  }
-
-  .project-card-btn-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
   }
 
   .project-card .btn {
