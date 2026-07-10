@@ -553,7 +553,6 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 1.6rem 1.6rem 2rem;
   }
 
   .about-photo-wrap {
@@ -564,6 +563,8 @@
 
   .about-photo {
     width: 100%;
+    max-width: 20rem;
+    margin: 0 auto;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 1.6rem;
