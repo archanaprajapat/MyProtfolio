@@ -5,7 +5,6 @@ menuIcon.onclick = () => {
   menuIcon.classList.toggle("bx-x");
   navbar.classList.toggle("active");
 };
-
 // Highlight active section in the navbar
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("header nav a");
@@ -26,13 +25,11 @@ window.onscroll = () => {
     }
   });
 };
-
 // Dark mode toggle functionality
 const darkModeToggle = document.querySelector("#darkmode-toggle");
 const body = document.querySelector("body");
 const icon = document.querySelector(".btn__icon");
-let isDarkMode = localStorage.getItem("darkmode") === "true"; // Load dark mode state from local storage
-
+let isDarkMode = localStorage.getItem("darkmode") !== "false"; // Defaults to dark mode unless the user explicitly chose light mode before
 const toggleDarkMode = () => {
   document.documentElement.style.setProperty(
     "--bg-color",
@@ -53,17 +50,14 @@ const toggleDarkMode = () => {
   body.classList.toggle("darkmode", isDarkMode);
   updateIcon();
 };
-
 darkModeToggle.addEventListener("click", () => {
   isDarkMode = !isDarkMode;
   store(isDarkMode);
   toggleDarkMode();
 });
-
 function store(value) {
   localStorage.setItem("darkmode", value);
 }
-
 function updateIcon() {
   icon.classList.add("animated");
   if (isDarkMode) {
@@ -77,11 +71,24 @@ function updateIcon() {
     icon.classList.remove("animated");
   }, 500); // Remove the animation class after it completes
 }
-
 // Initialize dark mode on page load
 toggleDarkMode();
-
-// Simple success/error handling for the contact form (Formspree)
+// Smooth fade-up reveal for Impact & Achievements cards on scroll
+const impactCards = document.querySelectorAll(".impact-card");
+if (impactCards.length) {
+  const impactRevealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal");
+          impactRevealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+  impactCards.forEach((card) => impactRevealObserver.observe(card));
+}
 const contactForm = document.querySelector("#contact-form");
 if (contactForm) {
   contactForm.addEventListener("submit", async (e) => {
