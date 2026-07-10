@@ -561,7 +561,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 150%;
+   
   }
 
   .about-photo-wrap {
@@ -572,6 +572,7 @@
   }
 
   .about-photo {
+    height: 100%;
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
