@@ -460,7 +460,8 @@
     align-items: stretch;
   }
 
-  .about-row-2 { grid-template-columns: 1fr 1.3fr; }
+  .about-row-2 { grid-template-columns: 1fr 1.3fr;
+                align-items: start; }
 
   .about-card {
     background: rgba(255, 255, 255, 0.03);
@@ -493,7 +494,7 @@
   .about-bio-card {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    
   }
 
   .about-bio-card h3 {
@@ -560,7 +561,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 100%;
+  
   }
 
   .about-photo-wrap {
