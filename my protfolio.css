@@ -414,84 +414,280 @@
     background: var(--bg-color);
   }
 
+  /* ================= ABOUT (new design, purple accent scoped locally) ================= */
   .about {
-    background: var(--second-bg-color);
+    --about-accent: #8b5cf6;
+    --about-accent-light: #a78bfa;
+    --about-card-bg: rgba(255, 255, 255, 0.03);
+    --about-border: rgba(139, 92, 246, 0.18);
     min-height: auto;
     padding: 8rem 12% 8rem;
+    background: radial-gradient(circle at 20% 10%, rgba(139, 92, 246, 0.08), transparent 45%), var(--second-bg-color);
   }
 
-  .about-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 5rem;
-    align-items: center;
-  }
-
-  .about-img {
-    border-radius: 1.6rem;
-    overflow: hidden;
-    border: 3px solid var(--main-color);
-    box-shadow: 0 0 25px var(--main-color);
-    aspect-ratio: 3 / 4;
-  }
-
-  .about-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .about-content p {
-    font-size: 1.7rem;
-    line-height: 1.8;
-    opacity: 0.85;
-    margin-bottom: 3rem;
-  }
-
-  .about-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.6rem;
-  }
-
-  .about-stat {
-    background: var(--bg-color);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 1.2rem;
-    padding: 1.8rem 1.4rem;
+  .about-header {
+    max-width: 800px;
+    margin: 0 auto 5rem;
     text-align: center;
   }
 
-  .about-stat h3 {
-    font-size: 2.6rem;
-    color: var(--main-color);
-    margin-bottom: 0.6rem;
+  .about-eyebrow-top {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--about-accent-light);
+    margin-bottom: 1rem;
   }
 
-  .about-stat p {
-    font-size: 1.2rem;
-    opacity: 0.7;
-    margin-bottom: 0;
-    line-height: 1.4;
+  .about-title {
+    font-size: 3.4rem;
+    font-weight: 800;
+    line-height: 1.35;
+    color: var(--text-color);
   }
+
+  .about-title span {
+    color: var(--about-accent-light);
+    text-shadow: 0 0 20px var(--about-accent);
+  }
+
+  .about-row {
+    max-width: 1200px;
+    margin: 0 auto 2.5rem;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 2.5rem;
+    align-items: stretch;
+  }
+
+  .about-row-2 { grid-template-columns: 1fr 1.3fr; }
+
+  .about-card {
+    background: var(--about-card-bg);
+    border: 1px solid var(--about-border);
+    border-radius: 1.8rem;
+    padding: 2.8rem 3rem;
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease-in-out;
+  }
+
+  .about-card:hover {
+    border-color: var(--about-accent);
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.15);
+  }
+
+  .about-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--about-accent-light);
+    margin-bottom: 1.6rem;
+  }
+
+  .about-tag i { font-size: 1.6rem; }
+
+  .about-bio-card h3,
+  .about-skills-card h3 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 1.4rem;
+    color: var(--text-color);
+  }
+
+  .about-bio-card p,
+  .about-passion-card p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    opacity: 0.75;
+    margin-bottom: 2.4rem;
+  }
+
+  .about-btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+  }
+
+  .about-btn-primary,
+  .about-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1.1rem 2.4rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border-radius: 3rem;
+    transition: 0.3s ease-in-out;
+  }
+
+  .about-btn-primary {
+    background: linear-gradient(135deg, var(--about-accent), var(--about-accent-light));
+    color: white;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+  }
+
+  .about-btn-primary:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(139, 92, 246, 0.6); }
+
+  .about-btn-outline {
+    background: transparent;
+    border: 2px solid var(--about-border);
+    color: var(--text-color);
+  }
+
+  .about-btn-outline:hover { border-color: var(--about-accent); color: var(--about-accent-light); }
+
+  /* Photo card */
+  .about-photo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .about-photo-wrap { position: relative; margin-bottom: 2.4rem; }
+
+  .about-photo {
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--about-accent);
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.4);
+  }
+
+  .about-photo-chip {
+    position: absolute;
+    bottom: 0.4rem;
+    right: -0.6rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: var(--bg-color);
+    border: 1px solid var(--about-accent);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 12px rgba(139, 92, 246, 0.4);
+  }
+
+  .about-photo-chip i { color: var(--about-accent-light); }
+
+  .about-photo-meta {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--about-border);
+    padding-top: 1.8rem;
+  }
+
+  .about-meta-right { text-align: right; }
+
+  .about-meta-label {
+    display: block;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 0.4rem;
+  }
+
+  .about-meta-value { font-size: 1.4rem; font-weight: 700; color: var(--text-color); }
+
+  .about-status { display: flex; align-items: center; gap: 0.5rem; justify-content: flex-end; color: var(--about-accent-light); }
+
+  .status-dot {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 8px #4ade80;
+    display: inline-block;
+  }
+
+  /* Passion card */
+  .about-passion-card { display: flex; flex-direction: column; justify-content: space-between; }
+
+  .about-metric-box {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    background: rgba(139, 92, 246, 0.08);
+    border: 1px solid var(--about-border);
+    border-radius: 1.2rem;
+    padding: 1.4rem 1.6rem;
+    margin-top: auto;
+  }
+
+  .about-metric-icon {
+    width: 3.4rem;
+    height: 3.4rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(139, 92, 246, 0.15);
+    color: var(--about-accent-light);
+    font-size: 1.6rem;
+  }
+
+  /* Skills card */
+  .about-skills-sub {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    opacity: 0.65;
+    margin-bottom: 2rem;
+  }
+
+  .about-skill-pills {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+
+  .about-skill-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    font-size: 1.35rem;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--about-border);
+    border-radius: 1rem;
+    padding: 1.1rem 1.4rem;
+    transition: 0.3s ease-in-out;
+  }
+
+  .about-skill-pill:hover {
+    border-color: var(--about-accent);
+    background: rgba(139, 92, 246, 0.08);
+    transform: translateX(4px);
+  }
+
+  .about-skill-pill i { color: var(--about-accent-light); font-size: 1.6rem; flex-shrink: 0; }
 
   @media (max-width: 900px) {
-    .about-grid {
-      grid-template-columns: 1fr;
-    }
-    .about-stats {
-      grid-template-columns: repeat(3, 1fr);
-    }
+    .about-row,
+    .about-row-2 { grid-template-columns: 1fr; }
+    .about-title { font-size: 2.6rem; }
   }
 
   @media (max-width: 560px) {
-    .about-stats {
-      grid-template-columns: 1fr;
-    }
+    .about-skill-pills { grid-template-columns: 1fr; }
+    .about-card { padding: 2.2rem 1.8rem; }
+    .about-btn-group { flex-direction: column; }
+    .about-btn-primary, .about-btn-outline { justify-content: center; }
   }
+  /* ================= END ABOUT ================= */
 
   .experience h2 {
     margin-bottom: 5rem;
