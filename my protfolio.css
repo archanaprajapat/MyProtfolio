@@ -414,15 +414,13 @@
     background: var(--bg-color);
   }
 
-  /* ================= ABOUT (new design, purple accent scoped locally) ================= */
+  /* ================= ABOUT (uses the site's own --main-color, no separate palette) ================= */
   .about {
-    --about-accent: #8b5cf6;
-    --about-accent-light: #a78bfa;
-    --about-card-bg: rgba(255, 255, 255, 0.03);
-    --about-border: rgba(139, 92, 246, 0.18);
+    --about-border: color-mix(in srgb, var(--main-color) 20%, transparent);
+    --about-tint-bg: color-mix(in srgb, var(--main-color) 6%, var(--second-bg-color));
     min-height: auto;
     padding: 8rem 12% 8rem;
-    background: radial-gradient(circle at 20% 10%, rgba(139, 92, 246, 0.08), transparent 45%), var(--second-bg-color);
+    background: var(--second-bg-color);
   }
 
   .about-header {
@@ -437,7 +435,7 @@
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--about-accent-light);
+    color: var(--main-color);
     margin-bottom: 1rem;
   }
 
@@ -449,15 +447,15 @@
   }
 
   .about-title span {
-    color: var(--about-accent-light);
-    text-shadow: 0 0 20px var(--about-accent);
+    color: var(--main-color);
+    text-shadow: 0 0 20px var(--main-color);
   }
 
   .about-row {
     max-width: 1200px;
     margin: 0 auto 2.5rem;
     display: grid;
-    grid-template-columns: 1.3fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 2.5rem;
     align-items: stretch;
   }
@@ -465,7 +463,7 @@
   .about-row-2 { grid-template-columns: 1fr 1.3fr; }
 
   .about-card {
-    background: var(--about-card-bg);
+    background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--about-border);
     border-radius: 1.8rem;
     padding: 2.8rem 3rem;
@@ -474,8 +472,8 @@
   }
 
   .about-card:hover {
-    border-color: var(--about-accent);
-    box-shadow: 0 0 25px rgba(139, 92, 246, 0.15);
+    border-color: var(--main-color);
+    box-shadow: 0 0 25px color-mix(in srgb, var(--main-color) 25%, transparent);
   }
 
   .about-tag {
@@ -486,17 +484,23 @@
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--about-accent-light);
+    color: var(--main-color);
     margin-bottom: 1.6rem;
   }
 
   .about-tag i { font-size: 1.6rem; }
 
-  .about-bio-card h3,
-  .about-skills-card h3 {
+  .about-bio-card h3 {
     font-size: 2.6rem;
     font-weight: 700;
     margin-bottom: 1.4rem;
+    color: var(--text-color);
+  }
+
+  .about-skills-card h3 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
     color: var(--text-color);
   }
 
@@ -527,12 +531,12 @@
   }
 
   .about-btn-primary {
-    background: linear-gradient(135deg, var(--about-accent), var(--about-accent-light));
-    color: white;
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+    background: var(--main-color);
+    color: black;
+    box-shadow: 0 0 20px var(--main-color);
   }
 
-  .about-btn-primary:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(139, 92, 246, 0.6); }
+  .about-btn-primary:hover { transform: scale(1.05); box-shadow: 0 0 35px var(--main-color); }
 
   .about-btn-outline {
     background: transparent;
@@ -540,9 +544,9 @@
     color: var(--text-color);
   }
 
-  .about-btn-outline:hover { border-color: var(--about-accent); color: var(--about-accent-light); }
+  .about-btn-outline:hover { border-color: var(--main-color); color: var(--main-color); }
 
-  /* Photo card */
+  /* Photo card — big square box, not a circle */
   .about-photo-card {
     display: flex;
     flex-direction: column;
@@ -551,35 +555,40 @@
     text-align: center;
   }
 
-  .about-photo-wrap { position: relative; margin-bottom: 2.4rem; }
+  .about-photo-wrap {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2.4rem;
+  }
 
   .about-photo {
-    width: 15rem;
-    height: 15rem;
+    width: 100%;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid var(--about-accent);
-    box-shadow: 0 0 25px rgba(139, 92, 246, 0.4);
+    border-radius: 1.6rem;
+    display: block;
+    border: 3px solid var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
   }
 
   .about-photo-chip {
     position: absolute;
-    bottom: 0.4rem;
-    right: -0.6rem;
+    bottom: 1.2rem;
+    right: 1.2rem;
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     background: var(--bg-color);
-    border: 1px solid var(--about-accent);
+    border: 1px solid var(--main-color);
     color: var(--text-color);
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
     border-radius: 2rem;
-    box-shadow: 0 0 12px rgba(139, 92, 246, 0.4);
+    box-shadow: 0 0 12px var(--main-color);
   }
 
-  .about-photo-chip i { color: var(--about-accent-light); }
+  .about-photo-chip i { color: var(--main-color); }
 
   .about-photo-meta {
     width: 100%;
@@ -602,7 +611,7 @@
 
   .about-meta-value { font-size: 1.4rem; font-weight: 700; color: var(--text-color); }
 
-  .about-status { display: flex; align-items: center; gap: 0.5rem; justify-content: flex-end; color: var(--about-accent-light); }
+  .about-status { display: flex; align-items: center; gap: 0.5rem; justify-content: flex-end; color: var(--main-color); }
 
   .status-dot {
     width: 0.7rem;
@@ -620,7 +629,7 @@
     display: flex;
     align-items: center;
     gap: 1.4rem;
-    background: rgba(139, 92, 246, 0.08);
+    background: var(--about-tint-bg);
     border: 1px solid var(--about-border);
     border-radius: 1.2rem;
     padding: 1.4rem 1.6rem;
@@ -635,14 +644,18 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: rgba(139, 92, 246, 0.15);
-    color: var(--about-accent-light);
+    background: color-mix(in srgb, var(--main-color) 15%, transparent);
+    color: var(--main-color);
     font-size: 1.6rem;
   }
 
-  /* Skills card */
+  /* Skills card — smaller heading, distinct tinted background */
+  .about-skills-card {
+    background: var(--about-tint-bg);
+  }
+
   .about-skills-sub {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     line-height: 1.7;
     opacity: 0.65;
     margin-bottom: 2rem;
@@ -660,7 +673,7 @@
     gap: 0.9rem;
     font-size: 1.35rem;
     font-weight: 500;
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--about-border);
     border-radius: 1rem;
     padding: 1.1rem 1.4rem;
@@ -668,17 +681,18 @@
   }
 
   .about-skill-pill:hover {
-    border-color: var(--about-accent);
-    background: rgba(139, 92, 246, 0.08);
+    border-color: var(--main-color);
+    background: color-mix(in srgb, var(--main-color) 10%, transparent);
     transform: translateX(4px);
   }
 
-  .about-skill-pill i { color: var(--about-accent-light); font-size: 1.6rem; flex-shrink: 0; }
+  .about-skill-pill i { color: var(--main-color); font-size: 1.6rem; flex-shrink: 0; }
 
   @media (max-width: 900px) {
     .about-row,
     .about-row-2 { grid-template-columns: 1fr; }
     .about-title { font-size: 2.6rem; }
+    .about-photo { max-width: 30rem; margin: 0 auto; }
   }
 
   @media (max-width: 560px) {
