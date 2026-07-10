@@ -65,7 +65,7 @@
   }
 
   .navbar a {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     color: var(--text-color);
     margin-left: 2rem;
     font-weight: 500;
@@ -550,22 +550,23 @@
   .about-photo-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: stretch;
+    justify-content: flex-start;
     text-align: center;
+    height: 100%;
   }
 
   .about-photo-wrap {
     position: relative;
-    width: 100%;
+    flex: 1;
+    display: flex;
     margin-bottom: 2.4rem;
+    min-height: 0;
   }
 
   .about-photo {
     width: 100%;
-    max-width: 20rem;
-    margin: 0 auto;
-    aspect-ratio: 1 / 1;
+    height: 100%;
     object-fit: cover;
     border-radius: 1.6rem;
     display: block;
@@ -695,7 +696,9 @@
     .about-row,
     .about-row-2 { grid-template-columns: 1fr; }
     .about-title { font-size: 2.6rem; }
-    .about-photo { max-width: 30rem; margin: 0 auto; }
+    .about-photo-card { height: auto; }
+    .about-photo-wrap { flex: none; aspect-ratio: 1 / 1; max-width: 30rem; margin: 0 auto 2.4rem; }
+    .about-photo { height: 100%; }
   }
 
   @media (max-width: 560px) {
