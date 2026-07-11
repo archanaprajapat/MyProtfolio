@@ -567,8 +567,6 @@
   .about-photo-wrap {
     position: relative;
     width: 100%;
-    height: 100%;
-    max-width: 24rem;
     margin: 0 auto 2.4rem;
   }
 
@@ -1483,6 +1481,322 @@
     background: var(--main-color);
     padding: 0.4rem 1.1rem;
     border-radius: 1rem;
+  }
+
+  .cert-clickable {
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+
+  .cert-clickable:hover {
+    filter: brightness(0.8);
+  }
+
+  .cert-lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    cursor: zoom-out;
+  }
+
+  .cert-lightbox.active {
+    display: flex;
+  }
+
+  .cert-lightbox-img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 1.2rem;
+    border: 3px solid var(--main-color);
+    box-shadow: 0 0 40px var(--main-color);
+  }
+
+  .cert-lightbox-close {
+    position: absolute;
+    top: 2.5rem;
+    right: 3.5rem;
+    font-size: 3.5rem;
+    color: var(--main-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0 15px var(--main-color);
+    transition: 0.3s ease-in-out;
+  }
+
+  .cert-lightbox-close:hover {
+    transform: scale(1.2) rotate(90deg);
+  }
+
+  @media (max-width: 560px) {
+    .cert-lightbox-close { top: 1.5rem; right: 1.5rem; font-size: 3rem; }
+  }
+
+  /* ================= CAREER DASHBOARD (new section) ================= */
+  .dashboard {
+    background: var(--bg-color);
+  }
+
+  .dashboard-header {
+    max-width: 700px;
+    margin: 0 auto 5rem;
+    text-align: center;
+  }
+
+  .dashboard-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.4rem;
+    align-items: stretch;
+  }
+
+  .dash-panel {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--about-border, color-mix(in srgb, var(--main-color) 20%, transparent));
+    border-radius: 1.8rem;
+    padding: 2.6rem 2.8rem;
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease-in-out;
+  }
+
+  .dash-panel:hover {
+    border-color: var(--main-color);
+    box-shadow: 0 0 25px color-mix(in srgb, var(--main-color) 25%, transparent);
+  }
+
+  /* Skill bars */
+  .dash-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .dash-bar-row:last-child { margin-bottom: 0; }
+
+  .dash-bar-label {
+    width: 12rem;
+    flex-shrink: 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+    opacity: 0.85;
+  }
+
+  .dash-bar-track {
+    flex: 1;
+    height: 0.8rem;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .dash-bar-fill {
+    height: 100%;
+    border-radius: 10px;
+    background: var(--main-color);
+    box-shadow: 0 0 8px var(--main-color);
+  }
+
+  .dash-bar-value {
+    width: 4rem;
+    flex-shrink: 0;
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--main-color);
+  }
+
+  /* Career timeline */
+  .dash-timeline-track {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+  }
+
+  .dash-timeline-track::before {
+    content: "";
+    position: absolute;
+    top: 1.9rem;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--about-border, color-mix(in srgb, var(--main-color) 20%, transparent));
+  }
+
+  .dash-timeline-step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.8rem;
+    width: 33%;
+  }
+
+  .dash-timeline-dot {
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    background: var(--bg-color);
+    border: 2px solid var(--main-color);
+    z-index: 1;
+  }
+
+  .dash-timeline-current .dash-timeline-dot {
+    background: var(--main-color);
+    box-shadow: 0 0 14px var(--main-color);
+    animation: dash-pulse 1.8s ease-in-out infinite;
+  }
+
+  @keyframes dash-pulse {
+    0%, 100% { box-shadow: 0 0 8px var(--main-color); }
+    50% { box-shadow: 0 0 20px var(--main-color); }
+  }
+
+  .dash-timeline-year {
+    font-size: 1.1rem;
+    opacity: 0.6;
+    font-weight: 600;
+  }
+
+  .dash-timeline-role {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  .dash-timeline-current .dash-timeline-role { color: var(--main-color); }
+
+  /* Scholarship partners */
+  .dash-partner-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.6rem;
+  }
+
+  .dash-partner-chip {
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: var(--about-tint-bg, rgba(255,255,255,0.04));
+    border: 1px solid var(--about-border, color-mix(in srgb, var(--main-color) 20%, transparent));
+    color: var(--text-color);
+    padding: 0.7rem 1.4rem;
+    border-radius: 2rem;
+    transition: 0.3s ease-in-out;
+  }
+
+  .dash-partner-chip:hover {
+    border-color: var(--main-color);
+    color: var(--main-color);
+  }
+
+  /* Tools donut */
+  .dash-tools-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .dash-donut-wrap {
+    position: relative;
+    width: 14rem;
+    height: 14rem;
+    margin: 1rem auto 2rem;
+  }
+
+  .dash-donut {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+      var(--main-color) 0deg 72deg,
+      color-mix(in srgb, var(--main-color) 80%, white) 72deg 136.8deg,
+      color-mix(in srgb, var(--main-color) 60%, white) 136.8deg 194.4deg,
+      color-mix(in srgb, var(--main-color) 80%, black) 194.4deg 252deg,
+      color-mix(in srgb, var(--main-color) 60%, black) 252deg 302.4deg,
+      color-mix(in srgb, var(--main-color) 40%, white) 302.4deg 360deg
+    );
+    box-shadow: 0 0 25px color-mix(in srgb, var(--main-color) 30%, transparent);
+  }
+
+  .dash-donut-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8.4rem;
+    height: 8.4rem;
+    border-radius: 50%;
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    opacity: 0.8;
+  }
+
+  .dash-donut-center span {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--main-color);
+    opacity: 1;
+  }
+
+  .dash-legend {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem 1.6rem;
+    width: 100%;
+    text-align: left;
+  }
+
+  .dash-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 1.2rem;
+    opacity: 0.85;
+  }
+
+  .dash-legend-dot {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .dash-dot-1 { background: var(--main-color); }
+  .dash-dot-2 { background: color-mix(in srgb, var(--main-color) 80%, white); }
+  .dash-dot-3 { background: color-mix(in srgb, var(--main-color) 60%, white); }
+  .dash-dot-4 { background: color-mix(in srgb, var(--main-color) 80%, black); }
+  .dash-dot-5 { background: color-mix(in srgb, var(--main-color) 60%, black); }
+  .dash-dot-6 { background: color-mix(in srgb, var(--main-color) 40%, white); }
+
+  @media (max-width: 900px) {
+    .dashboard-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 560px) {
+    .dash-panel { padding: 2.2rem 1.8rem; }
+    .dash-timeline-track { flex-direction: column; align-items: flex-start; gap: 2.2rem; }
+    .dash-timeline-track::before { top: 0; bottom: 0; left: 0.75rem; width: 2px; height: auto; right: auto; }
+    .dash-timeline-step { flex-direction: row; width: 100%; text-align: left; gap: 1.4rem; align-items: center; }
+    .dash-bar-label { width: 9rem; font-size: 1.15rem; }
   }
 
   /* ================= IMPACT & ACHIEVEMENTS (new section) ================= */
