@@ -89,6 +89,32 @@ if (impactCards.length) {
   );
   impactCards.forEach((card) => impactRevealObserver.observe(card));
 }
+// Certificate lightbox — click a certificate image to view it full-size
+const certLightbox = document.querySelector("#certLightbox");
+const certLightboxImg = document.querySelector("#certLightboxImg");
+const certLightboxClose = document.querySelector("#certLightboxClose");
+const certImages = document.querySelectorAll(".cert-clickable");
+
+if (certLightbox && certImages.length) {
+  certImages.forEach((img) => {
+    img.addEventListener("click", () => {
+      certLightboxImg.src = img.src;
+      certLightboxImg.alt = img.alt;
+      certLightbox.classList.add("active");
+    });
+  });
+
+  const closeCertLightbox = () => certLightbox.classList.remove("active");
+
+  certLightboxClose.addEventListener("click", closeCertLightbox);
+  certLightbox.addEventListener("click", (e) => {
+    if (e.target === certLightbox) closeCertLightbox();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeCertLightbox();
+  });
+}
+
 const contactForm = document.querySelector("#contact-form");
 if (contactForm) {
   contactForm.addEventListener("submit", async (e) => {
