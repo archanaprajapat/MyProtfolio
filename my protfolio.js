@@ -73,21 +73,21 @@ function updateIcon() {
 }
 // Initialize dark mode on page load
 toggleDarkMode();
-// Smooth fade-up reveal for Impact & Achievements cards on scroll
-const impactCards = document.querySelectorAll(".impact-card");
-if (impactCards.length) {
-  const impactRevealObserver = new IntersectionObserver(
+// Smooth fade-up reveal for Career Dashboard cards on scroll
+const dashRevealTargets = document.querySelectorAll(".dash-kpi-card, .dash-panel");
+if (dashRevealTargets.length) {
+  const dashRevealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("reveal");
-          impactRevealObserver.unobserve(entry.target);
+          dashRevealObserver.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.2 }
+    { threshold: 0.15 }
   );
-  impactCards.forEach((card) => impactRevealObserver.observe(card));
+  dashRevealTargets.forEach((el) => dashRevealObserver.observe(el));
 }
 // Certificate lightbox — click a certificate image to view it full-size
 const certLightbox = document.querySelector("#certLightbox");
