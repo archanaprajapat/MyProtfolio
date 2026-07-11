@@ -1683,32 +1683,9 @@
 
   .dash-timeline-current .dash-timeline-role { color: var(--main-color); }
 
-  /* Scholarship partners */
-  .dash-partner-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1.6rem;
-  }
-
-  .dash-partner-chip {
-    font-size: 1.2rem;
-    font-weight: 600;
-    background: var(--about-tint-bg, rgba(255,255,255,0.04));
-    border: 1px solid var(--about-border, color-mix(in srgb, var(--main-color) 20%, transparent));
-    color: var(--text-color);
-    padding: 0.7rem 1.4rem;
-    border-radius: 2rem;
-    transition: 0.3s ease-in-out;
-  }
-
-  .dash-partner-chip:hover {
-    border-color: var(--main-color);
-    color: var(--main-color);
-  }
-
   /* Tools donut */
   .dash-tools-panel {
+    grid-column: 1 / -1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1808,7 +1785,7 @@
     max-width: 1200px;
     margin: 0 auto 4rem;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.8rem;
   }
 
