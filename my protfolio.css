@@ -561,7 +561,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-   
+    padding: 2.8rem 1.6rem;
   }
 
   .about-photo-wrap {
@@ -571,9 +571,8 @@
   }
 
   .about-photo {
-    height: 100%;
+    height: 32rem;
     width: 100%;
-    aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 1.6rem;
     display: block;
@@ -1568,9 +1567,15 @@
     border-radius: 1.8rem;
     padding: 2.6rem 2.8rem;
     backdrop-filter: blur(10px);
-    transition: 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }
 
+  .dash-panel.reveal {
+    opacity: 1;
+    transform: translateY(0);
+  }
   .dash-panel:hover {
     border-color: var(--main-color);
     box-shadow: 0 0 25px color-mix(in srgb, var(--main-color) 25%, transparent);
@@ -1799,129 +1804,88 @@
     .dash-bar-label { width: 9rem; font-size: 1.15rem; }
   }
 
-  /* ================= IMPACT & ACHIEVEMENTS (new section) ================= */
-  .impact {
-    background: var(--second-bg-color);
-  }
-
-  .impact-header {
-    max-width: 700px;
-    margin: 0 auto 5rem;
-    text-align: center;
-  }
-
-  .impact-subtitle {
-    font-size: 1.7rem;
-    font-weight: 400;
-    color: var(--text-color);
-    opacity: 0.75;
-    margin-top: -3.5rem;
-  }
-
-  .impact-grid {
-    max-width: 1300px;
-    margin: 0 auto;
+  /* ================= DASHBOARD KPI ROW (merged from Impact & Achievements) ================= */
+  .dash-kpi-row {
+    max-width: 1200px;
+    margin: 0 auto 4rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2.4rem;
+    gap: 1.8rem;
   }
 
-  .impact-card {
+  .dash-kpi-card {
     position: relative;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid color-mix(in srgb, var(--main-color) 20%, transparent);
     backdrop-filter: blur(12px);
-    border-radius: 2.2rem;
-    padding: 3rem 2.4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    height: 100%;
-    animation: impact-float 4.5s ease-in-out infinite;
+    border-radius: 1.6rem;
+    padding: 2.2rem 1.8rem;
+    text-align: center;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.7s ease-out, transform 0.7s ease-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }
 
-  .impact-card.reveal {
+  .dash-kpi-card.reveal {
     opacity: 1;
     transform: translateY(0);
+    animation: dash-kpi-float 4.5s ease-in-out infinite;
   }
 
-  .impact-card:nth-child(2) { animation-delay: 0.5s; }
-  .impact-card:nth-child(3) { animation-delay: 1s; }
-  .impact-card:nth-child(4) { animation-delay: 1.5s; }
+  .dash-kpi-card.reveal:nth-child(2) { animation-delay: 0.4s; }
+  .dash-kpi-card.reveal:nth-child(3) { animation-delay: 0.8s; }
+  .dash-kpi-card.reveal:nth-child(4) { animation-delay: 1.2s; }
 
-  .impact-card:hover {
-    transform: translateY(-8px) scale(1.02);
+  .dash-kpi-card:hover {
+    transform: translateY(-6px) scale(1.02);
     border-color: var(--main-color);
-    box-shadow: 0 0 30px var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
   }
 
-  .impact-card.reveal:hover { transform: translateY(-8px) scale(1.02); }
-
-  .impact-icon {
-    width: 5.5rem;
-    height: 5.5rem;
+  .dash-kpi-icon {
+    width: 4.4rem;
+    height: 4.4rem;
+    margin: 0 auto 1.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     background: color-mix(in srgb, var(--main-color) 12%, transparent);
     border: 1px solid var(--main-color);
-    box-shadow: 0 0 18px var(--main-color);
-    margin-bottom: 1.8rem;
+    box-shadow: 0 0 14px var(--main-color);
   }
 
-  .impact-icon i {
-    font-size: 2.4rem;
+  .dash-kpi-icon i {
+    font-size: 2rem;
     color: var(--main-color);
-    text-shadow: 0 0 12px var(--main-color);
+    text-shadow: 0 0 10px var(--main-color);
   }
 
-  .impact-card h3 {
-    font-size: 1.9rem;
-    font-weight: 700;
-    line-height: 1.35;
-    margin-bottom: 1.2rem;
-    color: var(--text-color);
+  .dash-kpi-value {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: var(--main-color);
+    text-shadow: 0 0 14px var(--main-color);
+    margin-bottom: 0.5rem;
   }
 
-  .impact-card p {
-    font-size: 1.3rem;
-    line-height: 1.6;
-    opacity: 0.7;
-    margin-bottom: 2rem;
-  }
-
-  .impact-highlight {
-    margin-top: auto;
-    display: inline-block;
+  .dash-kpi-label {
     font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    color: var(--main-color);
-    background: color-mix(in srgb, var(--main-color) 10%, transparent);
-    border: 1px solid color-mix(in srgb, var(--main-color) 30%, transparent);
-    padding: 0.7rem 1.4rem;
-    border-radius: 2rem;
+    opacity: 0.75;
+    line-height: 1.4;
   }
 
-  @keyframes impact-float {
+  @keyframes dash-kpi-float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+    50% { transform: translateY(-6px); }
   }
 
-  .impact-card.reveal { animation: impact-float 4.5s ease-in-out infinite; }
-
-  @media (max-width: 1150px) {
-    .impact-grid { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 900px) {
+    .dash-kpi-row { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 560px) {
-    .impact-grid { grid-template-columns: 1fr; }
-    .impact-card { padding: 2.4rem 2rem; }
+    .dash-kpi-row { grid-template-columns: 1fr; }
   }
   .projects-grid {
     max-width: 1200px;
